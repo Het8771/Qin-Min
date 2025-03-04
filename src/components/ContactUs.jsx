@@ -7,7 +7,7 @@ const Contact = () => {
             <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Contact Form */}
                 <div>
-                    <h2 className="text-2xl font-semibold text-gray-800 mb-6 w-full">Get In Touch With Us. We're Here To Assist You.</h2>
+                    <h2 className="text-3xl font-semibold text-gray-800 mb-6 w-full">Get In Touch With Us. We're Here To Assist You.</h2>
                     <form>
                         <div className="mb-4">
                             <input

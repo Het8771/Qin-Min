@@ -9,7 +9,6 @@ function Header() {
     const [activeTileSize, setActiveTileSize] = useState(null);
     const [activeCollection, setActiveCollection] = useState(null);
 
-
     const handleWhatsAppClick = () => {
         window.open('https://wa.me/YOUR_WHATSAPP_NUMBER', '_blank');
     };
@@ -36,7 +35,6 @@ function Header() {
         setActiveTileSize(null);
     };
 
-
     const collectionLinks = [
         { name: 'Chromatic Collection', path: '/chromatic' },
         { name: 'Opula Collection', path: '/Opula' },
@@ -53,16 +51,15 @@ function Header() {
         { name: 'Book Match Collection', path: '/Book' },
         { name: 'Serenity Collection', path: '/Serenity' },
     ];
-    
+
     const tileSizeLinks = [
-        { name: '1200 x 2400mm', path: '/1200x2400', category: 'Carving Matt', subcategories: ['Sub1', 'Sub2', 'Sub3'] },
-        { name: '1200 x 1800mm', path: '/1200x1800', category: 'Grano', subcategories: ['Sub4', 'Sub5', 'Sub6'] },
-        { name: '800 x 2400mm', path: '/800x2400', category: 'High gloss', subcategories: ['Sub7', 'Sub8', 'Sub9'] },
-        { name: '800 x 1600mm', path: '/800x1600', category: 'High Gloss Polished', subcategories: ['Sub10', 'Sub11', 'Sub12'] },
-        { name: '600 x 1200mm', path: '/600x1200', category: 'Lux Surface', subcategories: ['Sub13', 'Sub14', 'Sub15'] },
-        { name: '600 x 600mm', path: '/600x600', category: 'Polished', subcategories: ['Sub16', 'Sub17', 'Sub18'] },
-        { name: '400 x 400mm', path: '/400x400', category: 'Super White', subcategories: ['Sub19', 'Sub20', 'Sub21'] },
-        { name: '300 x 300mm', path: '/300x300', category: '', subcategories: ['Sub22', 'Sub23', 'Sub24'] },
+        { name: '1200 x 2400mm', path: '/1200x2400', subcategories: ['CarvingMatt', 'Grano', 'Highgloss', 'HighPolished', 'LuxSurface', 'Polished', 'Superwhite'] },
+        { name: '1200 x 1800mm', path: '/1200x1800', subcategories: ['CarvingMatt', 'Grano', 'Highgloss', 'HighPolished', 'LuxSurface', 'Polished', 'SuperWhite'] },
+        { name: '800 x 2400mm', path: '/800x2400', subcategories: ['CarvingMatt', 'Grano', 'Highgloss', 'HighPolished', 'LuxSurface', 'Polished', 'SuperWhite'] },
+        { name: '800 x 1600mm', path: '/800x1600', subcategories: ['CarvingMatt', 'Grano', 'Highgloss', 'HighPolished', 'LuxSurface', 'Polished', 'SuperWhite'] },
+        { name: '600 x 1200mm', path: '/600x1200', subcategories: ['CarvingMatt', 'Grano', 'Highgloss', 'HighPolished', 'LuxSurface', 'Polished', 'SuperWhite'] },
+        { name: '600 x 600mm', path: '/600x600', subcategories: ['CarvingMatt', 'Grano', 'Highgloss', 'HighPolished', 'LuxSurface', 'Polished', 'SuperWhite'] },
+        { name: '400 x 400mm', path: '/400x400', subcategories: ['CarvingMatt', 'Grano', 'Highgloss', 'HighPolished', 'LuxSurface', 'Polished', 'SuperWhite'] },
     ];
 
     return (
@@ -70,10 +67,10 @@ function Header() {
             <div className="container mx-auto py-4 px-6 flex items-center justify-between">
                 {/* Logo */}
                 <div className="text-xl font-bold">
-                    <img src={logo} alt="Logo" className="h-8" />
+                    <Link to="/"> <img src={logo} alt="Logo" className="h-8" /></Link>
                 </div>
 
-                {/* Mobile Menu Button (X Icon) */}
+                {/* Mobile Menu Button (Hamburger Icon) */}
                 <div className="md:hidden">
                     <button onClick={toggleMenu} type="button" className="text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700" aria-label="Menu">
                         <svg className="h-6 w-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -86,16 +83,18 @@ function Header() {
                     </button>
                 </div>
 
-                {/* Navigation Links */}
-                <div className={`md:hidden ${isOpen ? 'block' : 'hidden'} absolute top-0 left-0 w-full h-screen bg-white shadow-md z-20 p-4`}>
+                {/* Mobile Menu (Full Screen Overlay) */}
+                <div className={`md:hidden ${isOpen ? 'fixed top-0 left-0 w-full h-screen bg-white shadow-md z-20 p-4 overflow-y-auto' : 'hidden'}`}>
                     <div className="flex justify-between items-center mb-4">
                         {/* Logo (Mobile) */}
                         <div className="text-xl font-bold">
-                            <img src={logo} alt="Logo" className="h-8" />
+                            <Link to="/" onClick={toggleMenu}>
+                                <img src={logo} alt="Logo" className="h-8" />
+                            </Link>
                         </div>
-                        {/* Mobile Menu Button (X Icon) */}
-                        <div className="md:hidden">
-                            <button onClick={toggleMenu} type="button" className="text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700" aria-label="Menu">
+                        {/* Close Button (X Icon) */}
+                        <div>
+                            <button onClick={toggleMenu} type="button" className="text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700" aria-label="Close Menu">
                                 <svg className="h-6 w-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                     <path fillRule="evenodd" d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 0 1 1.414 1.414l-4.828 4.829 4.828 4.828z" clipRule="evenodd" />
                                 </svg>
@@ -103,56 +102,81 @@ function Header() {
                         </div>
                     </div>
                     <nav className="flex flex-col space-y-4">
-                        <Link to="/" className="hover:text-gray-500">Home</Link>
-                        <button
-                            onClick={toggleCollection}
-                            className={`flex items-center justify-between hover:text-red-500 ${activeCollection ? 'bg-red-100' : ''}`}
-                        >
-                            Collection
-                            <svg className={`w-4 h-4 ml-1 transition-transform ${isCollectionOpen ? 'rotate-180' : ''}`} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                            </svg>
-                        </button>
-                        {isCollectionOpen && (
-                            <div className="pl-4 flex flex-col space-y-2">
-                                {collectionLinks.map((link, index) => (
-                                    <Link
-                                        key={index}
-                                        to={link.path}
-                                        className="hover:text-gray-500"
-                                        onClick={() => {
-                                            closeCollection();
-                                        }}
-                                    >
-                                        {link.name}
-                                    </Link>
-                                ))}
-                            </div>
-                        )}
+                        <Link to="/" className="hover:text-red-500" onClick={toggleMenu}>Home</Link>
+                        {/* Collection Dropdown (Mobile) */}
+                        <div>
+                            <button
+                                onClick={toggleCollection}
+                                className="flex items-center justify-between w-full hover:text-red-500"
+                            >
+                                Collection
+                                <svg className={`w-4 h-4 ml-1 transition-transform ${isCollectionOpen ? 'rotate-180' : ''}`} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                                </svg>
+                            </button>
+                            {isCollectionOpen && (
+                                <div className="pl-4 mt-2 space-y-2">
+                                    {collectionLinks.map((link, index) => (
+                                        <Link
+                                            key={index}
+                                            to={link.path}
+                                            className="block hover:text-red-500"
+                                            onClick={() => {
+                                                closeCollection();
+                                                toggleMenu();
+                                            }}
+                                        >
+                                            {link.name}
+                                        </Link>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
                         {/* Tile Size Dropdown (Mobile) */}
-                        <button onClick={toggleTileSize} className="flex items-center justify-between hover:text-red-500">
-                            Tile Size
-                            <svg className={`w-4 h-4 ml-1 transition-transform ${isTileSizeOpen ? 'rotate-180' : ''}`} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                            </svg>
-                        </button>
-                        {isTileSizeOpen && (
-                            <div className="pl-4 flex flex-col space-y-2">
-                                {tileSizeLinks.map((link, index) => (
-                                    <Link
-                                        key={index}
-                                        to={link.path}
-                                        className="hover:text-red-500 flex justify-between"
-                                        onClick={closeTileSize} // Close dropdown on click
-                                    >
-                                        <span>{link.name}</span>
-                                        <span>{link.category}</span> {/* Display Category */}
-                                    </Link>
-                                ))}
-                            </div>
-                        )}
-                        <Link to="/About" className="hover:text-red">About</Link>
-                        <Link to="/Contact" className="hover:text-red">Contact</Link>
+                        <div>
+                            <button
+                                onClick={toggleTileSize}
+                                className="flex items-center justify-between w-full hover:text-red-500"
+                            >
+                                Tile Size
+                                <svg className={`w-4 h-4 ml-1 transition-transform ${isTileSizeOpen ? 'rotate-180' : ''}`} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                                </svg>
+                            </button>
+                            {isTileSizeOpen && (
+                                <div className="pl-4 mt-2 space-y-2">
+                                    {tileSizeLinks.map((link, index) => (
+                                        <div key={index}>
+                                            <button
+                                                className="flex items-center justify-between w-full hover:text-red-500"
+                                                onClick={() => setActiveTileSize(activeTileSize === link.name ? null : link.name)}
+                                            >
+                                                {link.name}
+                                                <svg className={`w-4 h-4 ml-1 transition-transform ${activeTileSize === link.name ? 'rotate-90' : ''}`} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+                                                </svg>
+                                            </button>
+                                            {activeTileSize === link.name && (
+                                                <div className="pl-4 mt-2 space-y-2">
+                                                    {link.subcategories.map((sub, subIndex) => (
+                                                        <Link
+                                                            key={subIndex}
+                                                            to={`${link.path}/${sub.toLowerCase().replace(/\s+/g, '-')}`}
+                                                            className="block hover:text-red-500"
+                                                            onClick={toggleMenu}
+                                                        >
+                                                            {sub}
+                                                        </Link>
+                                                    ))}
+                                                </div>
+                                            )}
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+                        <Link to="/About" className="hover:text-red-500" onClick={toggleMenu}>About</Link>
+                        <Link to="/ContactUs" className="hover:text-red-500" onClick={toggleMenu}>Contact</Link>
                     </nav>
                     {/* "Let's Talk" Button in Mobile Menu */}
                     <button
@@ -201,7 +225,7 @@ function Header() {
                         )}
                     </div>
                     {/* Tile Size Dropdown (Desktop) */}
-                    <div className="relative">
+                    <div className="relative ">
                         <button onClick={toggleTileSize} className="flex items-center hover:text-red-500">
                             Tile Size
                             <svg className={`w-4 h-4 ml-1 transition-transform ${isTileSizeOpen ? 'rotate-180' : ''}`} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">

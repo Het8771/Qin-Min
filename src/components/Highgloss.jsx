@@ -174,7 +174,7 @@ const TileCollection = () => {
             {/* Top Section with Background Image */}
             <div className="relative bg-cover bg-center h-64 flex items-center justify-center" style={{ backgroundImage: `url(${back})` }}>
                 <div className="absolute inset-0 bg-opacity-50"></div>
-                <h2 className="relative text-4xl font-semibold text-white z-10">Forever Collection</h2>
+                <h2 className="relative text-4xl font-semibold text-white z-10">High loss</h2>
             </div> {/* Main Content Section */}
             <div className="container mx-auto py-12 px-4">
                 <div className="md:flex gap-6">

@@ -161,7 +161,7 @@ const Home = () => {
             </div>
         </div>
         </div>
-        <Testimonials/>
+
         </>
         
     );
