@@ -10,7 +10,8 @@ function Header() {
     const [activeCollection, setActiveCollection] = useState(null);
 
     const handleWhatsAppClick = () => {
-        window.open('https://wa.me/YOUR_WHATSAPP_NUMBER', '_blank');
+        const phoneNumber = "+91 12345 67890"; 
+        window.open(`https://wa.me/${phoneNumber}`, "_blank");
     };
 
     const toggleMenu = () => {

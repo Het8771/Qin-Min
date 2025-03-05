@@ -8,7 +8,7 @@ const TileCollection = () => {
     const [openFilter, setOpenFilter] = useState(null);
     const [hoveredProduct, setHoveredProduct] = useState(null);
     const [activeFilters, setActiveFilters] = useState({});
-    const [filteredTiles, setFilteredTiles] = useState([]);
+    const [filteredTiles, setFilteredTiles] = useState([]); // Initialize as empty, will be populated
     const [isHovered, setIsHovered] = useState(false);
 
     const tileData = [
@@ -38,7 +38,14 @@ const TileCollection = () => {
         }));
     };
 
+     useEffect(() => {
+        // Initialize filteredTiles with all data on initial load
+        setFilteredTiles(tileData);
+    }, [tileData]); // Only runs on mount and when tileData changes (if it ever does)
+
+
     useEffect(() => {
+        // Apply filters whenever activeFilters or tileData changes
         const newFilteredTiles = tileData.filter(tile => {
             return Object.entries(activeFilters).every(([filterName, options]) => {
                 const activeOptions = Object.entries(options)
@@ -51,7 +58,7 @@ const TileCollection = () => {
             });
         });
         setFilteredTiles(newFilteredTiles);
-    }, [activeFilters]);
+    }, [activeFilters, tileData]); //  Crucially, include tileData here!
 
     const handleInquiryClick = () => {
         const whatsappNumber = '1234567890';
@@ -123,9 +130,7 @@ const TileCollection = () => {
                                         </tr>
                                     </tbody>
                                 </table>
-                            </div>
-
-                            {/* Inquiry Button */}
+                            </div>... {/* Inquiry Button */}
                             <button
                                 onClick={handleInquiryClick}
                                 className="mt-6 flex items-center bg-black text-white px-4 py-2 uppercase text-sm font-semibold hover:bg-gray-800"
@@ -151,8 +156,6 @@ const TileCollection = () => {
                                 {hoveredProduct === item.id && (
                                     <Link
                                         to={`/product/${item.id}`}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
                                         className="absolute bottom-0 left-0 w-full bg-black text-white py-2 opacity-100 hover:opacity-80"
                                     >
                                         View Product Details
@@ -166,9 +169,7 @@ const TileCollection = () => {
                 </div>
             </div>
         );
-    }
-
-    // Collection View
+    }// Collection View
     return (
         <div className="bg-white">
             {/* Top Section with Background Image */}
@@ -214,33 +215,35 @@ const TileCollection = () => {
 
                     {/* Tiles Section */}
                     <div className="w-full md:w-3/4">
-                        <h3 className="text-lg font-semibold text-gray-800 mb-6">{filteredTiles.length} Found</h3>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                            {filteredTiles.map((tile) => (
-                                <div
-                                    key={tile.id}
-                                    className="relative group text-center"
-                                    onMouseEnter={() => setHoveredProduct(tile.id)}
-                                    onMouseLeave={() => setHoveredProduct(null)}
-                                >
-                                    <img src={tiles} alt={tile.name} className="w-full h-auto object-cover" />
-                                    {hoveredProduct === tile.id && (
-                                        <Link
-                                            to={`/product/${tile.id}`}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="absolute bottom-0 left-0 w-full bg-black text-white py-2 opacity-100 hover:opacity-80"
-                                        >
-                                            View Product Details
-                                        </Link>
-                                    )}
-                                    <div className="pt-1">
-                                        <h4 className="text-base font-semibold text-gray-700">{tile.name}</h4>
-                                        <p className="text-gray-500 text-sm">{tile.size}</p>
+                         <h3 className="text-lg font-semibold text-gray-800 mb-6">{filteredTiles.length} Found</h3>
+                        {filteredTiles.length === 0 ? (
+                            <p>No products found matching your filters.</p>
+                        ) : (
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                {filteredTiles.map((tile) => (
+                                    <div
+                                        key={tile.id}
+                                        className="relative group text-center"
+                                        onMouseEnter={() => setHoveredProduct(tile.id)}
+                                        onMouseLeave={() => setHoveredProduct(null)}
+                                    >
+                                        <img src={tiles} alt={tile.name} className="w-full h-auto object-cover" />
+                                        {hoveredProduct === tile.id && (
+                                            <Link
+                                                to={`/product/${tile.id}`}
+                                                className="absolute bottom-0 left-0 w-full bg-black text-white py-2 opacity-100 hover:opacity-80"
+                                            >
+                                                View Product Details
+                                            </Link>
+                                        )}
+                                        <div className="pt-1">
+                                            <h4 className="text-base font-semibold text-gray-700">{tile.name}</h4>
+                                            <p className="text-gray-500 text-sm">{tile.size}</p>
+                                        </div>
                                     </div>
-                                </div>
-                            ))}
-                        </div>
+                                ))}
+                            </div>
+                           )}
                     </div>
                 </div>
             </div>

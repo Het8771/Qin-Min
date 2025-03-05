@@ -4,9 +4,9 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
 import About from "./components/About";
-import Contact from "./components/ContactUs";
+import ContactUs from "./components/ContactUs";
 import Error from "./components/Error";
-import Single from "./components/Single";
+// import Single from "./components/Single";
 import Chromatic from "./components/Chromatic";
 import Diamond from "./components/Diamond";
 import Earth from "./components/Earth";
@@ -36,9 +36,9 @@ function App() {
         <Routes>
              <Route path="/" element={<Home/>} />
              <Route path="/About" element={<About/>} />
-             <Route path="/ContactUs" element={<Contact/>} />
+             <Route path="/ContactUs" element={<ContactUs/>} />
              <Route path="/Error" element={<Error/>} />
-             <Route path="/Single" element={<Single/>} />
+             {/* <Route path="/Single" element={<Single/>} /> */}
              <Route path="/chromatic" element={<Chromatic/>} />
              <Route path="/Diamond" element={<Diamond/>} />
              <Route path="/Earth" element={<Earth/>} />
@@ -101,6 +101,10 @@ function App() {
              <Route path="/400x400/Luxsurface" element={<Luxsurface/>} />
              <Route path="/400x400/Polished" element={<Polished/>} />
              <Route path="/400x400/Superwhite" element={<Superwhite/>} />
+              <Route path="/product/:productId" element={<Chromatic/>} />
+
+
+
         </Routes>
         <Footer/>
     </Router>
