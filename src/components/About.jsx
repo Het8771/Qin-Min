@@ -1,113 +1,175 @@
-import React from 'react';
-import about1 from "../image/about1.svg";
-import about2 from "../image/about2.svg";
-import about3 from "../image/about3.svg";
-import about4 from "../image/about4.svg";
-import back from "../image/back.svg";
-import team1 from "../image/team1.svg";
-import team2 from "../image/team2.svg";
-import team3 from "../image/team3.svg";
-import team4 from "../image/team4.svg";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import logo from "../image/logo.svg"; // Logo image
+import backh1 from "../image/backh1.svg";
+import about from "../image/about.svg";
+import map from "../image/map.svg";
+import { FaQuoteLeft, FaCheckCircle } from "react-icons/fa";
 
-const About = () => {
-        const teamMembers = [
-            {
-                name: 'Harmeet Godhani',
-                role: 'Founder',
-                image: team1
-            },
-            {
-                name: 'Harmeet Godhani',
-                role: 'Founder',
-                image: team2
-            },
-            {
-                name: 'Harmeet Godhani',
-                role: 'Founder',
-                image: team3
-            },
-            {
-                name: 'Harmeet Godhani',
-                role: 'Founder',
-                image: team4
-            },
-        ];
-    return (
-        <>
-        <div className="bg-white">
-            {/* Top Section with Background Image */}
-            <div className="relative bg-cover bg-center h-64 flex items-center justify-center" style={{ backgroundImage: `url(${back})` }}>
-                <div className="absolute inset-0  bg-opacity-50"></div>
-                <h2 className="relative text-4xl font-semibold text-white z-10">About Us</h2>
+const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  return (
+    <div>
+      {/* Navbar Section */}
+      <nav className="relative bg-cover bg-center text-white" style={{ backgroundImage: `url(${backh1})` }}>
+        <div className="container mx-auto px-4">
+          <div className="flex justify-between items-center h-16">
+            {/* Logo */}
+            <div>
+              <Link to="/">
+                <img src={logo} alt="Globwing logo" className="h-8 w-auto" />
+              </Link>
             </div>
 
-            {/* Main Content Section */}
-            <div className="container mx-auto py-16 px-4">
-                {/* Description */}
-                <div className="text-black-700 leading-relaxed mb-12 text-center text-justify text-lg">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                </div>
+               {/* Desktop Menu */}
+                       <div className="hidden md:flex items-center space-x-8 font-semibold">
+                         <Link to="/" className="hover:text-blue-400">
+                           Home
+                         </Link>
+                         <Link to="/About" className="hover:text-blue-400">
+                           About us
+                         </Link>
+                         <Link to="/Product" className="hover:text-blue-400">
+                           Product
+                         </Link>
+                         <Link to="/Export" className="hover:text-blue-400">
+                           Export
+                         </Link>
+                         <Link to="/Blog" className="hover:text-blue-400">
+                           Blog
+                         </Link>
+                       </div>
+            {/* Contact Button */}
+            <Link to="/Contact" className="hidden md:inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+              Contact us
+            </Link>
 
-                {/* Image Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-                    {/* Image 1 */}
-                    <div className="rounded-lg overflow-hidden shadow-md">
-                        <img src={about1} alt="About Us" className="w-full h-full object-cover" />
-                    </div>
-
-                    {/* Image 2 (Split) */}
-                    <div className="md:col-span-1 grid grid-cols-1 grid-rows-2 gap-6">
-                        <div className="rounded-lg overflow-hidden shadow-md">
-                            <img src={about2} alt="About Us" className="w-full h-full object-cover" />
-                        </div>
-                        <div className="rounded-lg overflow-hidden shadow-md">
-                            <img src={about4} alt="About Us" className="w-full h-full object-cover" />
-                        </div>
-                    </div>
-
-                    {/* Image 3 */}
-                    <div className="rounded-lg overflow-hidden shadow-md">
-                        <img src={about3} alt="About Us" className="w-full h-full object-cover" />
-                    </div>
-                </div>
-
-                {/* Our Vision */}
-                <div className="mb-8">
-                    <h3 className="text-3xl font-semibold text-gray-800 mb-4">Our Vision</h3>
-                    <p className=" text-lg text-gray-700 text-justify leading-relaxed">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-</p>
-                </div>
-
-                {/* Our Mission */}
-                <div>
-                    <h3 className="text-3xl font-semibold text-gray-800 mb-4">Our Mission</h3>
-                    <p className="text-lg text-gray-700 text-justify leading-relaxed">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-</p>
-                </div>
+            {/* Hamburger Menu (Mobile) */}
+            <div className="md:hidden">
+              <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-white focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
+                  {isMenuOpen ? (
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  ) : (
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+                  )}
+                </svg>
+              </button>
             </div>
-            <div className="bg-white py-5">
-            <div className="container mx-auto px-4">
-                <h2 className="text-2xl font-semibold text-gray-800 mb-8">Our Core Team</h2>
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-9">
-                    {teamMembers.map((member, index) => (
-                        <div key={index} className="text-center">
-                            <img
-                                src={member.image}
-                                alt={member.name}
-                                className="w-[400] h-[400]  shadow-md aspect-square object-cover mb-2"
-                            />
-                            <p className="text-gray-800 font-semibold mr-20">{member.name}</p>
-                            <p className="text-red-500 mr-20">{member.role}</p>
-                        </div>
-                    ))}
-                </div>
-            </div>
+          </div>
+
+          {/* Mobile Menu */}
+          {/* Mobile Menu */}
+                    {isMenuOpen && (
+                      <div className="md:hidden bg-white shadow-lg rounded-lg mt-2 p-4 space-y-4 font-semibold text-gray-800">
+                        <Link to="/" className="block hover:text-blue-600">
+                          Home
+                        </Link>
+                        <Link to="/About" className="block hover:text-blue-600">
+                          About us
+                        </Link>
+                        <Link to="/Product" className="block hover:text-blue-600">
+                          Product
+                        </Link>
+                        <Link to="/Export" className="block hover:text-blue-600">
+                          Export
+                        </Link>
+                        <Link to="/Blog" className="block hover:text-blue-600">
+                          Blog
+                        </Link>
+                        <Link
+                          to="/Contact"
+                          className="w-full block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300 text-center"
+                        >
+                          Contact us
+                        </Link>
+                      </div>
+                    )}
         </div>
+
+        {/* Hero Section */}
+        <div className="py-20 md:py-40 lg:py-60 px-6 md:px-10">
+        <h1 className="text-white text-5xl md:text-7xl font-bold mt-6" style={{ fontFamily: 'Frank Ruhl Libre' }}>
+            About Us
+          </h1>
+          <p className="text-white text-lg md:text-2xl text-justify">
+            Glowing Group of Company is a leading exporter specializing in the global trade of agricultural products and textile yarns. 
+            Established in 2020, we have quickly gained recognition for our commitment to quality.
+          </p>
         </div>
-        </>
-    );
+      </nav>
+
+      {/* About Us Section */}
+      <section className="py-12 px-4 sm:px-6 lg:px-8 mt-[30px]">
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+          {/* Image Section */}
+          <div className="w-4/6 mx-auto">
+            <img src={about} alt="Agriculture Products" className="rounded-full shadow-lg" />
+          </div>
+
+          {/* Text Content Section */}
+          <div className="text-gray-700">
+            <h4 className="text-[#026498] font-semibold text-2xl">About Us</h4>
+            <h3 className="text-[#026498] font-bold text-4xl sm:text-4xl">Leading Exporter of Agriculture & Textiles</h3>
+            <p className="mt-4 text-lg text-black">
+              Glowing Group of Company specializes in exporting agricultural products and textile yarns, ensuring quality, reliability, and customer satisfaction.
+            </p>
+            <ul className="mt-6 space-y-4">
+              {[
+                "Agriculture (Java peanuts, Sesame seeds, Groundnut Oil, Raw Cotton).",
+                "Cattle feed (Soymeal, Peanut cake, Green millet, Yellow maize).",
+                "Ceramic Parts & Insulators (Band Heater, Ignition Electrode, Mechanical Seal Ring)."
+              ].map((text, index) => (
+                <li key={index} className="flex items-start space-x-3">
+                  <FaCheckCircle className="text-[#026498] mt-1" size={20} />
+                  <span className="text-sm font-medium">{text}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form & Map Section */}
+      <div className="flex flex-col md:flex-row bg-white rounded-lg shadow-md overflow-hidden p-8 gap-8 container mx-auto">
+        {/* Form Section */}
+        <div className="md:w-1/2 w-full">
+          <h2 className="text-2xl font-semibold text-[#026498] mb-4">Have Questions?</h2>
+          <h1 className="text-3xl font-bold text-[#026498] mb-6">We're Here to Help!</h1>
+
+          <form className="space-y-4">
+            {["Your Name", "Your Email", "Phone"].map((placeholder, index) => (
+              <input key={index} type="text" placeholder={placeholder} className="w-full p-3 border rounded focus:ring focus:ring-blue-200" />
+            ))}
+
+            <select className="w-full p-3 border rounded focus:ring focus:ring-blue-200">
+              <option>Choose Subject</option>
+              <option>General Inquiry</option>
+              <option>Support</option>
+              <option>Sales</option>
+            </select>
+
+            <textarea placeholder="Message" rows="4" className="w-full p-3 border rounded focus:ring focus:ring-blue-200"></textarea>
+
+            <div className="flex items-center">
+              <input type="checkbox" id="robot" className="mr-2" />
+              <label htmlFor="robot" className="text-sm">I AM Not a Robot</label>
+            </div>
+
+            <button className="w-full bg-[#026498] text-white p-3 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400">
+              Send Message
+            </button>
+          </form>
+        </div>
+
+        {/* Map Section */}
+        <div className="md:w-1/2 w-full">
+          <img src={map} alt="Company Location Map" className="w-full h-[300px] md:h-full object-cover rounded-lg" />
+        </div>
+      </div>
+    </div>
+  );
 };
 
-export default About;
+export default Navbar;
