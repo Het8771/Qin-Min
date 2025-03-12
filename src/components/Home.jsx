@@ -286,7 +286,7 @@ const AgricultureSection = () => {
             </p>
             <ul className="mt-6 space-y-4">
               <li className="flex items-start space-x-3">
-                <FaCheckCircle className="text-[#026498] mt-1" size={20} />
+                <FaCheckCircle className="text-[#026498] mt-1" size={22} />
                 <span className="text-sm font-medium text-justify">Agriculture (Java peanuts, TJ peanuts, Bold peanuts, Hulled Sesame seeds, Natural Sesame seeds, Groundnut Oil, Raw Cotton).</span>
               </li>
               <li className="flex items-start space-x-3">
@@ -294,7 +294,7 @@ const AgricultureSection = () => {
                 <span className="text-sm font-medium text-justify">Cattle feed (Soymeal, Peanut cake, Cotton seed cake, Green millet, Yellow maize, Rapeseed meal, Castor seed meal).</span>
               </li>
               <li className="flex items-start space-x-3">
-                <FaCheckCircle className="text-[#026498] mt-1" size={20} />
+                <FaCheckCircle className="text-[#026498] mt-1" size={32} />
                 <span className="text-sm font-medium text-justify">Ceramic Parts & Insulators (Band Heater, End Sealing Bead, Ignition Electrode, Ceramic Alumina, Mechanical Seal Ring, Terminal Block for Thermocouple, Thermostat Parts, Ceramic Connector).</span>
               </li>
             </ul>
