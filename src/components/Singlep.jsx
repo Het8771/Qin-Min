@@ -1,18 +1,19 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../image/logo.svg"; // Logo image
-import backh1 from "../image/backh1.svg";
+import backh from "../image/backh.svg";
 import about from "../image/about.svg";
 import map from "../image/map.svg";
-import { FaQuoteLeft, FaCheckCircle } from "react-icons/fa";
+import { FaQuoteLeft, FaCheckCircle, FaChevronLeft, FaChevronRight,FaPaperPlane } from "react-icons/fa";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
+    <>
     <div>
       {/* Navbar Section */}
-      <nav className="relative bg-cover bg-center text-white" style={{ backgroundImage: `url(${backh1})` }}>
+      <nav className="relative bg-cover bg-center text-white" style={{ backgroundImage: `url(${backh})` }}>
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
@@ -88,7 +89,7 @@ const Navbar = () => {
 
           {/* Text Content Section */}
           <div className="text-gray-700">
-            <h3 className="text-[#026498] font-bold text-4xl sm:text-4xl">Leading Exporter of Agriculture & Textiles</h3>
+            <h3 className="text-[#3270DF] font-bold text-4xl sm:text-4xl">Leading Exporter of Agriculture & Textiles</h3>
             <p className="mt-4 text-lg text-black text-justify">
             Globwing Group of Company is a leading exporter specializing in the global trade of agricultural products and textile yarns. 
             Established in 2020, we have quickly gained recognition for our commitment to quality, reliability, and customer satisfaction.
@@ -102,7 +103,7 @@ const Navbar = () => {
                 "Ceramic Parts & Insulators (Band Heater, Ignition Electrode, Mechanical Seal Ring)."
               ].map((text, index) => (
                 <li key={index} className="flex items-start space-x-3">
-                  <FaCheckCircle className="text-[#026498] mt-1" size={20} />
+                  <FaCheckCircle className="text-[#3270DF] mt-1" size={20} />
                   <span className="text-sm font-medium">{text}</span>
                 </li>
               ))}
@@ -112,11 +113,11 @@ const Navbar = () => {
       </section>
 
       {/* Contact Form & Map Section */}
-      <div className="flex flex-col md:flex-row bg-white rounded-lg shadow-md overflow-hidden p-8 gap-8 container mx-auto">
+      <div className="flex flex-col md:flex-row bg-white rounded-lg  overflow-hidden p-8 gap-8 container mx-auto">
         {/* Form Section */}
         <div className="md:w-1/2 w-full">
-          <h2 className="text-2xl font-semibold text-[#026498] mb-4">Have Questions?</h2>
-          <h1 className="text-3xl font-bold text-[#026498] mb-6">We're Here to Help!</h1>
+          <h2 className="text-2xl font-semibold text-[#3270DF] mb-4">Have Questions?</h2>
+          <h1 className="text-3xl font-bold text-[#3270DF] mb-6">We're Here to Help!</h1>
 
           <form className="space-y-4">
             {["Your Name", "Your Email", "Phone"].map((placeholder, index) => (
@@ -137,7 +138,7 @@ const Navbar = () => {
               <label htmlFor="robot" className="text-sm">I AM Not a Robot</label>
             </div>
 
-            <button className="w-full bg-[#026498] text-white p-3 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400">
+            <button className="w-full bg-[#3270DF] text-white p-3 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400">
               Send Message
             </button>
           </form>
@@ -149,6 +150,20 @@ const Navbar = () => {
         </div>
       </div>
     </div>
+     <div className="bg-[#3270DF] text-white p-6 flex flex-col md:flex-row justify-between items-center w-full mb-2">
+                      <h2 className="text-lg font-semibold">Connect with Us for Business Solutions</h2>
+                      <div className="flex items-center bg-white  p-2 w-full md:w-auto mt-4 md:mt-0  rounded-lg">
+                        <input
+                          type="email"
+                          placeholder="Enter Mail"
+                          className="px-4 py-2 outline-none text-black w-full"
+                        />
+                        <button className="bg-[#3270DF] text-white p-2 rounded-lg">
+                          <FaPaperPlane size={16} />
+                        </button>
+                      </div>
+                    </div>
+                    </>
   );
 };
 

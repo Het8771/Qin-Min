@@ -1,12 +1,12 @@
 import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import logo from "../image/logo.svg"; // Logo image
-import backh1 from "../image/backh1.svg";
+import backh from "../image/backh.svg";
 import about from "../image/about.svg";
 import map1 from "../image/map1.svg";
 import map from "../image/map.svg";
 import mapPin from "../image/mapPin.png"; // Import the map pin image
-import { FaQuoteLeft, FaCheckCircle, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { FaQuoteLeft, FaCheckCircle, FaChevronLeft, FaChevronRight,FaPaperPlane } from "react-icons/fa";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,12 +26,13 @@ const Navbar = () => {
   const [hoveredLocation, setHoveredLocation] = useState(null);
 
   return (
+    <>
     <div>
       {/* Navbar Section */}
       <nav
         className="relative bg-cover bg-center text-white"
         style={{
-          backgroundImage: `url(${backh1})`,
+          backgroundImage: `url(${backh})`,
         }}
       >
         <div className="container mx-auto px-4">
@@ -247,6 +248,20 @@ const Navbar = () => {
         </div>
       </div>
     </div>
+      <div className="bg-[#3270DF] text-white p-6 flex flex-col md:flex-row justify-between items-center w-full mb-2">
+              <h2 className="text-lg font-semibold">Connect with Us for Business Solutions</h2>
+              <div className="flex items-center bg-white  p-2 w-full md:w-auto mt-4 md:mt-0  rounded-lg">
+                <input
+                  type="email"
+                  placeholder="Enter Mail"
+                  className="px-4 py-2 outline-none text-black w-full"
+                />
+                <button className="bg-[#3270DF] text-white p-2 rounded-lg">
+                  <FaPaperPlane size={16} />
+                </button>
+              </div>
+            </div>
+            </>
   );
 };
 

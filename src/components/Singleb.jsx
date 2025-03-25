@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../image/logo.svg"; // Logo image
-import backh1 from "../image/backh1.svg";
+import backh from "../image/backh.svg";
 import about from "../image/about.svg";
 import map from "../image/map.svg";
 import { FaQuoteLeft, FaCheckCircle, FaChevronLeft, FaChevronRight } from "react-icons/fa";
@@ -15,7 +15,7 @@ const Navbar = () => {
       <nav
         className="relative bg-cover bg-center text-white"
         style={{
-          backgroundImage: `url(${backh1})`,
+          backgroundImage: `url(${backh})`,
         }}
       >
         <div className="container mx-auto px-4">
@@ -133,22 +133,22 @@ const Navbar = () => {
           
                     {/* Text Content Section */}
                     <div className="text-gray-700">
-                      <h4 className="text-[#026498] font-semibold text-2xl">About Us</h4>
-                      <h3 className="text-[#026498] font-bold text-4xl sm:text-4xl">Leading Exporter of Agriculture & Textiles</h3>
+                      <h4 className="text-[#3270DF] font-semibold text-2xl">About Us</h4>
+                      <h3 className="text-[#3270DF] font-bold text-4xl sm:text-4xl">Leading Exporter of Agriculture & Textiles</h3>
                       <p className="mt-4 text-1xl text-black text-justify">
                         Glowing Group of Company is a leading exporter specializing in the global trade of agricultural products and textile yarns. Established in 2020, we have quickly gained recognition for our commitment to quality, reliability, and customer satisfaction.
                       </p>
                       <ul className="mt-6 space-y-4">
                         <li className="flex items-start space-x-3">
-                          <FaCheckCircle className="text-[#026498] mt-1" size={20} />
+                          <FaCheckCircle className="text-[#3270DF] mt-1" size={20} />
                           <span className="text-sm font-medium text-justify">Agriculture (Java peanuts, TJ peanuts, Bold peanuts, Hulled Sesame seeds, Natural Sesame seeds, Groundnut Oil, Raw Cotton).</span>
                         </li>
                         <li className="flex items-start space-x-3">
-                          <FaCheckCircle className="text-[#026498] mt-1" size={20} />
+                          <FaCheckCircle className="text-[#3270DF] mt-1" size={20} />
                           <span className="text-sm font-medium text-justify">Cattle feed (Soymeal, Peanut cake, Cotton seed cake, Green millet, Yellow maize, Rapeseed meal, Castor seed meal).</span>
                         </li>
                         <li className="flex items-start space-x-3">
-                          <FaCheckCircle className="text-[#026498] mt-1" size={20} />
+                          <FaCheckCircle className="text-[#3270DF] mt-1" size={30} />
                           <span className="text-sm font-medium text-justify">Ceramic Parts & Insulators (Band Heater, End Sealing Bead, Ignition Electrode, Ceramic Alumina, Mechanical Seal Ring, Terminal Block for Thermocouple, Thermostat Parts, Ceramic Connector).</span>
                         </li>
                       </ul>
@@ -156,11 +156,11 @@ const Navbar = () => {
                   </div>
                 </section>
                {/* Contact Form & Map Section */}
-                    <div className="flex flex-col md:flex-row bg-white rounded-lg shadow-md overflow-hidden p-8 gap-8 container mx-auto">
+                    <div className="flex flex-col md:flex-row bg-white rounded-lg overflow-hidden p-8 gap-8 container mx-auto">
                       {/* Form Section */}
                       <div className="md:w-1/2 w-full">
-                        <h2 className="text-2xl font-semibold text-[#026498] mb-4">Have Questions?</h2>
-                        <h1 className="text-3xl font-bold text-[#026498] mb-6">We're Here to Help!</h1>
+                        <h2 className="text-2xl font-semibold text-[#3270DF] mb-4">Have Questions?</h2>
+                        <h1 className="text-3xl font-bold text-[#3270DF] mb-6">We're Here to Help!</h1>
               
                         <form className="space-y-4">
                           {["Your Name", "Your Email", "Phone"].map((placeholder, index) => (
@@ -181,7 +181,7 @@ const Navbar = () => {
                             <label htmlFor="robot" className="text-sm">I AM Not a Robot</label>
                           </div>
               
-                          <button className="w-full bg-[#026498] text-white p-3 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                          <button className="w-full bg-[#3270DF] text-white p-3 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400">
                             Send Message
                           </button>
                         </form>

@@ -4,7 +4,12 @@ import { useState, useEffect,useRef } from "react";
 import Home1 from "../image/Home1.svg";
 import Home2 from "../image/Home2.svg";
 import Home3 from "../image/Home3.svg";
-import sample1 from "../image/sample1.svg";
+import sample1 from "../image/sample1.jpg";
+import sample2 from "../image/sample2.jpg";
+import sample3 from "../image/sample3.jpg";
+import sample4 from "../image/sample4.jpg";
+import sample5 from "../image/sample5.jpg";
+import sample6 from "../image/sample6.jpg";
 import backh from "../image/backh.svg";
 import cate from "../image/cate.svg";
 import emoji1 from "../image/emoji1.svg";
@@ -13,22 +18,90 @@ import emoji3 from "../image/emoji3.svg";
 import emoji4 from "../image/emoji4.svg";
 import emoji5 from "../image/emoji5.svg";
 import emoji6 from "../image/emoji6.svg";
-import { FaQuoteLeft, FaCheckCircle, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { FaQuoteLeft, FaCheckCircle, FaChevronLeft, FaChevronRight,FaPaperPlane } from "react-icons/fa";
 import user from "../image/user.svg";
 import map from "../image/map.svg";
+import img1 from "../image/img1.jpg"
+import img2 from "../image/img2.svg";
+import img3 from "../image/img3.jpg";
+import img4 from "../image/img4.jpg";
+import Agri from "../image/Agri.jpg";
+import Agri2 from "../image/Agri2.jpg";
+import Agri3 from "../image/Agri3.jpg";
+import Agri4 from "../image/Agri4.jpg";
+import Agri5 from "../image/Agri5.jpg";
+import Agri6 from "../image/Agri6.jpg";
+import  Cattel from "../image/ Cattel.jpg";
+import  Cattel2 from "../image/ Cattel2.jpg";
+import  Cattel3 from "../image/Cattel3.jpg";
+import  Cattel4 from "../image/Cattel4.jpg";
+import  Cattel5 from "../image/Cattel5.jpg";
+import  Cattel6 from "../image/Cattel6.jpg";
+import Ceramic from "../image/Ceramic.jpg";
+import Ceramic2 from "../image/Ceramic2.jpg";
+import Ceramic3 from "../image/Ceramic3.jpg";
+import Ceramic4 from "../image/Ceramic4.jpg";
+import Ceramic5 from "../image/Ceramic5.jpg";
+import Ceramic6 from "../image/Ceramic6.jpg";
+import Agriculure from "../image/Agriculure.jpg";
+import Abc from "../image/Abc.jpg";
+import abc2 from "../image/abc2.jpg";
+import abc3 from "../image/abc3.jpg";
+import abc4 from "../image/abc4.jpg";
+import abc5 from "../image/abc5.jpg";
 import { FaStar, FaStarHalf } from "react-icons/fa"
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import "./AutoScroll.css";
 
 const AgricultureSection = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const productImages = [sample1, sample1, sample1, sample1, sample1, sample1];
-  const categoryImages = [cate, cate, cate, cate, cate, cate];
+  const productImages = [Ceramic,Ceramic2,Ceramic3,Ceramic4,Ceramic5,Ceramic];
+  // const categoryImages = [cate, cate, cate, cate, cate, cate];
   const productImages1 = [Home1, Home1, Home1, Home1, Home1, Home1];
 
+  const slides = [
+    {
+      img: img1,
+      title: 'Agriculture',
+      products: [" Reaping Nature's Best and Delivering It Worldwide with Integrity"],
+      description:
+        'Glowing Group of Company is a leading exporter specializing in the global trade of agricultural products. Established in 2020, we have quickly gained recognition for our commitment to quality.',
+    },
+    {
+      img: img2,
+      title: 'Agriculture',
+      products: [" Reaping Nature's Best and Delivering It Worldwide with Integrity"],
+      description:
+        'Glowing Group of Company is a leading exporter specializing in the global trade of agricultural products. Established in 2020, we have quickly gained recognition for our commitment to quality.',
+
+    },
+    {
+      img: img3,
+      title: 'Agriculture',
+      products: [" Reaping Nature's Best and Delivering It Worldwide with Integrity"],
+      description:
+        'Glowing Group of Company is a leading exporter specializing in the global trade of agricultural products. Established in 2020, we have quickly gained recognition for our commitment to quality.',
+
+    },
+    {
+      img: img4,
+      title: 'Agriculture',
+      products: [" Reaping Nature's Best and Delivering It Worldwide with Integrity"],
+      description:
+        'Glowing Group of Company is a leading exporter specializing in the global trade of agricultural products. Established in 2020, we have quickly gained recognition for our commitment to quality.',
+
+    },
+  ];
+
   const cardData = [
-    { title: 'Commitment to Quality', description: 'We ensure premium quality in all our agricultural products and textile yarns.', image: emoji1 },
+    { title: 'Commitment to Quality', description: 'We ensure premium quality in all our agricultural products.', image: emoji1 },
     { title: 'Reliable Export Services', description: 'Our efficient supply chain guarantees timely and secure global deliveries.', image: emoji2 },
     { title: 'Customer Satisfaction', description: 'We prioritize building long-term relationships through excellent service and support.', image: emoji3 },
-    { title: 'Diverse Product Portfolio', description: 'We offer a wide range of agricultural and textile materials to meet varied market demands.', image: emoji4 },
+    { title: 'Diverse Product Portfolio', description: 'We offer a wide range of agricultural  materials to meet varied market demands.', image: emoji4 },
     { title: 'Strong Global Network', description: 'Our extensive partnerships enable smooth international trade and business growth.', image: emoji5 },
     { title: 'Ethical and Sustainable Practices', description: 'We prioritize building long-term relationships through excellent service and support.', image: emoji6 },
   ];
@@ -44,9 +117,41 @@ const AgricultureSection = () => {
     "Ceramic Parts & Insulators",
     "Textile Products"
   ]
+
+
+  const categoriesData = {
+    "Agriculture": [
+      Agri,
+      Agri2,
+      Agri3,
+      Agri4,
+      Agri5,
+      Agri6
+    ],
+    " Cattel feed":[
+       Cattel,
+      Cattel2,
+      Cattel3,
+      Cattel4,
+      Cattel5,
+      Cattel6
+
+    ],
+    "Ceramic Parts & Insulators": [
+      Ceramic,
+      Ceramic2,
+      Ceramic3,
+      Ceramic4,
+      Ceramic5,
+      Ceramic6,
+    ]
+  };
+
   const [activeCategory, setActiveCategory] = useState("Agriculture")
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  
+  const categoryImages = categoriesData[activeCategory] || [];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -140,6 +245,38 @@ const AgricultureSection = () => {
       return () => scrollContainer.removeEventListener("scroll", handleScroll)
     }
   }, [currentIndex])
+
+
+
+  useEffect(() => {
+    const scrollContainer = scrollRef.current;
+
+    if (scrollContainer) {
+      let scrollAmount = 0;
+      const speed = 2; // Adjust speed (higher = faster)
+
+      const scroll = () => {
+        if (scrollContainer) {
+          scrollAmount += speed;
+          if (scrollAmount >= scrollContainer.scrollWidth / 2) {
+            scrollAmount = 0; // Reset when reaching half of duplicate list
+          }
+          scrollContainer.scrollLeft = scrollAmount;
+        }
+        requestAnimationFrame(scroll);
+      };
+
+      scroll();
+    }
+  }, []);
+  const productImage = [
+    Agriculure,
+    Abc,
+    abc2,
+    abc3,
+    abc4,
+    abc5,
+  ];
   
   return (
     <>
@@ -171,7 +308,7 @@ const AgricultureSection = () => {
             </div>
 
             {/* Contact Button */}
-            <Link to="/Contact" button className="hidden md:block bg-[#026498] text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300">
+            <Link to="/Contact" button className="hidden md:block bg-[#3270DF] text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300">
               Contact us
             </Link>
 
@@ -228,7 +365,7 @@ const AgricultureSection = () => {
               <Link to="/Blog" className="block text-black hover:text-blue-600">
                 Blog
               </Link>
-              <Link to="/Contact" className="block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 text-center">Contact us</Link>
+              <Link to="/Contact" className="block bg-blue-600 text-white px-4 py-2 rounded text-center">Contact us</Link>
             </div>
           )}
         </div>
@@ -236,21 +373,46 @@ const AgricultureSection = () => {
 
       {/* Hero Section */}
       <section className="relative w-full h-screen overflow-hidden">
-        <div className="absolute inset-0">
-          <img src={Home1} alt="Agriculture Products" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-black/10" />
-        </div>
+      <Swiper
+      modules={[Autoplay, Pagination, Navigation]}
+      loop={true}
+      autoplay={{ delay: 3000, disableOnInteraction: false }}
+      pagination={{ clickable: true }}
+      navigation
+      className="w-full h-screen"
+    >
+      {slides.map((slide, index) => (
+        <SwiperSlide key={index}>
+          <div className="relative w-full h-screen">
+            <img src={slide.img} alt={slide.title} className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-black/20" />
 
-        <div className="absolute inset-0 flex flex-col justify-center text-white px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-          <div className="space-y-2 sm:space-y-4 lg:space-y-6">
-            <h2 className="text-4xl sm:text-5xl lg:text-[64px] font-extrabold leading-tight sm:leading-tight lg:leading-[83px]" style={{ fontFamily: 'Frank Ruhl Libre' }}>Agriculture</h2>
-            <p className="text-2xl sm:text-3xl lg:text-4xl font-bold" style={{ fontFamily: 'Frank Ruhl Libre' }}>(Java Peanuts, TJ Peanuts, Bold Peanuts)</p>
-            <p className="text-2xl sm:text-3xl lg:text-4xl font-bold" style={{ fontFamily: 'Frank Ruhl Libre' }}>Hulled Sesame Seed</p>
-            <p className="text-base sm:text-lg lg:text-xl max-w-3xl tracking-wide mt-4 sm:mt-6 lg:mt-8">
-              Glowing Group of Company is a leading exporter specializing in the global trade of agricultural products and textile yarns. Established in 2020, we have quickly gained recognition for our commitment to quality.
-            </p>
+            <div className="absolute inset-0 flex flex-col justify-center text-white px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+              <div className="space-y-2 sm:space-y-4 lg:space-y-6">
+                <h2
+                  className="text-4xl sm:text-5xl lg:text-[64px] font-extrabold leading-tight sm:leading-tight lg:leading-[83px]"
+                  style={{ fontFamily: 'Frank Ruhl Libre' }}
+                >
+                  {slide.title}
+                </h2>
+                {slide.products.map((product, idx) => (
+                  <p
+                    key={idx}
+                    className="text-2xl sm:text-3xl lg:text-4xl font-bold"
+                    style={{ fontFamily: 'Frank Ruhl Libre' }}
+                  >
+                    {product}
+                  </p>
+                ))}
+                <p className="text-base sm:text-lg lg:text-xl max-w-3xl tracking-wide mt-4 sm:mt-6 lg:mt-8">
+                  {slide.description}
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
+        </SwiperSlide>
+      ))}
+    </Swiper>
 
         <div className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2">
           <button className="bg-white/30 hover:bg-white/50 text-white p-2 sm:p-3 rounded-full transition">
@@ -279,22 +441,22 @@ const AgricultureSection = () => {
 
           {/* Text Content Section */}
           <div className="text-gray-700">
-            <h4 className="text-[#026498] text-xl">About Us</h4>
-            <h3 className="text-[#026498] font-bold text-4xl sm:text-4xl">Leading Exporter of Agriculture & Textiles</h3>
+            <h4 className="text-[#3270DF] text-xl">Cattle feed</h4>
+            <h3 className="text-[#3270DF] font-bold text-4xl sm:text-4xl">Beyond Feed - Nourishing Global Herds with precision and care.</h3>
             <p className="mt-4 text-1xl text-black text-justify">
               Glowing Group of Company is a leading exporter specializing in the global trade of agricultural products and textile yarns. Established in 2020, we have quickly gained recognition for our commitment to quality, reliability, and customer satisfaction.
             </p>
             <ul className="mt-6 space-y-4">
               <li className="flex items-start space-x-3">
-                <FaCheckCircle className="text-[#026498] mt-1" size={22} />
-                <span className="text-sm font-medium text-justify">Agriculture (Java peanuts, TJ peanuts, Bold peanuts, Hulled Sesame seeds, Natural Sesame seeds, Groundnut Oil, Raw Cotton).</span>
+                <FaCheckCircle className="text-[#3270DF] mt-1" size={19} />
+                <span className="text-sm font-medium text-justify">Cattle feed plays a crucial role in ensuring the health, productivity, and sustainability of livestock farming.</span>
               </li>
               <li className="flex items-start space-x-3">
-                <FaCheckCircle className="text-[#026498] mt-1" size={20} />
-                <span className="text-sm font-medium text-justify">Cattle feed (Soymeal, Peanut cake, Cotton seed cake, Green millet, Yellow maize, Rapeseed meal, Castor seed meal).</span>
+                <FaCheckCircle className="text-[#3270DF] mt-1" size={24} />
+                <span className="text-sm font-medium text-justify"> Beyond Feed, we are committed to providing high-quality, nutrient-rich feed solutions that support farmers in raising healthier, stronger, and more productive herds.</span>
               </li>
               <li className="flex items-start space-x-3">
-                <FaCheckCircle className="text-[#026498] mt-1" size={32} />
+                <FaCheckCircle className="text-[#3270DF] mt-1" size={32} />
                 <span className="text-sm font-medium text-justify">Ceramic Parts & Insulators (Band Heater, End Sealing Bead, Ignition Electrode, Ceramic Alumina, Mechanical Seal Ring, Terminal Block for Thermocouple, Thermostat Parts, Ceramic Connector).</span>
               </li>
             </ul>
@@ -308,17 +470,17 @@ const AgricultureSection = () => {
 
         <div className="container mx-auto px-4">
           <div className=" mb-8">
-            <p className="text-xl text-white">Our Product</p>
-            <h2 className="text-4xl font-bold text-white mr">Leading Exporter of Agriculture & Textiles</h2>
-            <p className="text-white mt-2 ">Globwing Group of Company is a leading exporter specializing in the global trade of agricultural products and textile yarns. Established in 2020, we have quickly gained recognition for our commitment to quality.</p>
+            <p className="text-xl text-white">Ceramic insulater</p>
+            <h2 className="text-4xl font-bold text-white mr">Powering Progress with unmatched protection & precision</h2>
+            <p className="text-white mt-2 ">Ceramic insulators are essential components in modern electrical and agricultural infrastructure. They provide superior insulation, durability, and resistance to extreme environmental conditions, ensuring safe and efficient power transmission.</p>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
             {productImages.map((image, index) => (
               <div key={index} className="relative">
-                <img src={sample1} alt="Hulled Sesame seed" className="w-full h-60 object-cover rounded-md" />
+                <img src={image} alt="Hulled Sesame seed" className="w-full h-60 object-cover rounded-md" />
                 <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-50 text-white text-center py-2">
-                  <a href="#" className="text-white">Hulled Sesame seed</a>
+                  {/* <a href="#" className="text-white">Hulled Sesame seed</a> */}
                 </div>
               </div>
             ))}
@@ -329,31 +491,30 @@ const AgricultureSection = () => {
       {/* Our Category Section */}
       <section className="py-12">
       <div className="container mx-auto px-4">
+        {/* Header Section */}
         <div className="text-left mb-8">
-          <p className="text-[#026498] tracking-wider text-xl">Our Category</p>
-          <h2 className="text-4xl font-bold text-[#026498]">
-            Leading Exporter of Agriculture & Textiles
+          <p className="text-[#3270DF] tracking-wider text-xl">Our Category</p>
+          <h2 className="text-4xl font-bold text-[#3270DF]">
+          Our Range of Products
           </h2>
           <p className="text-black mt-2 text-base">
-            Glowing Group of Company is a leading exporter specializing in the
-            global trade of agricultural products and textile yarns. Established
-            in 2020, we have quickly gained recognition for our commitment to
-            quality.
+          we are dedicated to providing high-quality, innovative, and sustainable agricultural solutions. Our diverse range of products is designed to enhance productivity, improve efficiency, and ensure long-term sustainability for farmers and agribusinesses.
           </p>
         </div>
 
+        {/* Categories and Image Grid */}
         <div className="flex flex-col lg:flex-row gap-6">
           {/* Category List (Sticky) */}
           <div className="lg:w-1/4">
-            <div className="sticky top-0 bg-white rounded-lg p-2">
+            <div className="sticky top-0 bg-white rounded-lg p-2 shadow-md">
               <ul className="space-y-2">
-                {categories.map(category => (
+                {Object.keys(categoriesData).map(category => (
                   <li key={category}>
                     <button
                       className={`text-black py-2 px-4 rounded-md w-full text-left transition-colors duration-200 ${
                         activeCategory === category
-                          ? "bg-[#026498] text-white"
-                          : "hover:bg-[#026498] hover:text-white"
+                          ? "bg-[#3270DF] text-white"
+                          : "hover:bg-[#3270DF] hover:text-white"
                       }`}
                       onClick={() => setActiveCategory(category)}
                     >
@@ -365,15 +526,15 @@ const AgricultureSection = () => {
             </div>
           </div>
 
-          {/* Image Grid */}
-          <div className="lg:w-3/4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {/* Image Grid - Changes based on selected category */}
+          <div className="lg:w-3/4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {categoryImages.map((image, index) => (
               <div
                 key={index}
                 className="relative overflow-hidden rounded-md shadow-md group"
               >
                 <img
-                  src={image || "/placeholder.svg"}
+                  src={image}
                   alt={`${activeCategory} product ${index + 1}`}
                   width={400}
                   height={300}
@@ -393,8 +554,8 @@ const AgricultureSection = () => {
         <div className="container mx-auto px-4">
           <div className=" mb-8">
             <p className="text-white tracking-wider text-xl">Why Choose Us?</p>
-            <h2 className="text-4xl font-bold text-white">Leading Exporter of Agriculture & Textiles</h2>
-            <p className="text-gray-300 mt-2">Glowing Group of Company is a leading exporter specializing in the global trade of agricultural products and textile yarns. Established in 2020, we have quickly gained recognition for our commitment to quality.</p>
+            <h2 className="text-4xl font-bold text-white"> Your global partner for Excellence and Tailored Solutions.</h2>
+            <p className="text-gray-300 mt-2">Cattle feed and fertilizers to modern irrigation, farm equipment, and smart agriculture solutions, we help drive agricultural success with innovation and precision.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -413,44 +574,63 @@ const AgricultureSection = () => {
 
       {/* Best Selling Product Section */}
       <section className="py-12">
-        <div className="container mx-auto px-4">
-          <div className=" mb-8">
-            <p className="text-[#026498] tracking-wider text-xl">Best Selling Product</p>
-            <h2 className="text-4xl font-bold text-[#026498]">Leading Exporter of Agriculture & Textiles</h2>
-            <p className="text-gray-700 mt-2 text-1xl">Glowing Group of Company is a leading exporter specializing in the global trade of agricultural products and textile yarns. Established in 2020, we have quickly gained recognition for our commitment to quality.</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4">
-            {productImages1.map((image, index) => (
-              <div key={index} className="relative">
-                <img src={Home1} alt="Product" className="w-full h-64 object-cover rounded-md shadow-md" />
-              </div>
-            ))}
-          </div>
+      <div className="container mx-auto px-4">
+        <div className="mb-8">
+          <p className="text-[#3270DF] tracking-wider text-xl">Best Selling Product</p>
+          <h2 className="text-4xl font-bold text-[#3270DF]">Top Choice for Global Markets.</h2>
+          <p className="text-gray-700 mt-2 text-lg">
+          Glowing Group of Company,we take pride in being the top choice for global markets, offering high-quality, innovative, and sustainable solutions across the agricultural industry. Our commitment to excellence, precision, and customer satisfaction makes us a trusted partner for farmers, agribusinesses, and industries worldwide.
+          </p>
         </div>
-      </section>
 
+        {/* Product Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4">
+          {productImage.map((image, index) => (
+            <div key={index} className="relative">
+              <img
+                src={image}
+                alt={`Product ${index + 1}`}
+                className="w-full h-64 object-cover rounded-md shadow-md"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
       {/* Google Line Section */}
-      <section className="bg-white py-4">
-  <div className="container mx-auto flex justify-center items-center">
-    {Array(6).fill("Google").map((word, index) => (
-      <span key={index} className="text-gray-400 text-2xl md:text-3xl lg:text-4xl mx-2 md:mx-4 lg:mx-6">{word}</span>
-    ))}
-  </div>
-</section>
+      <section className="bg-white py-4 overflow-hidden">
+      <div className="relative w-full flex items-center">
+        <div className="scrolling-text">
+          {[...Array(2)].map((_, index) => (
+            <div key={index} className="flex space-x-6">
+              {Array(6)
+                .fill("Google")
+                .map((word, i) => (
+                  <span
+                    key={i}
+                    className="text-gray-400 text-2xl md:text-3xl lg:text-4xl mx-2 md:mx-4 lg:mx-6"
+                  >
+                    {word}
+                  </span>
+                ))}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
 
 
       {/* Testimonial Section */}
       <section className="py-12 bg-white">
       <div className="container mx-auto px-4">
         <div className="mb-8">
-          <p className="text-[#026498] tracking-wider text-xl">Testimonial</p>
-          <h2 className="text-4xl font-bold text-[#026498]">
+          <p className="text-[#3270DF] tracking-wider text-xl">Testimonial</p>
+          <h2 className="text-4xl font-bold text-[#3270DF]">
             What Our Users Say
           </h2>
           <p className="text-gray-700 mt-2">
             Glowing Group of Company is a leading exporter specializing in the
-            global trade of agricultural products and textile yarns. Established
+            global trade of agricultural products. Established
             in 2020, we have quickly gained recognition for our commitment to
             quality
           </p>
@@ -513,8 +693,8 @@ const AgricultureSection = () => {
         <div className="flex flex-col md:flex-row bg-white rounded-lg overflow-hidden mb-10 p-8 gap-8 container mx-auto ">
           {/* Contact Form Section */}
           <div className="md:w-1/2 w-full">
-            <h2 className="text-xl font-semibold text-[#026498] mb-4">Have Questions?</h2>
-            <h1 className="text-3xl font-bold text-[#026498] mb-6">We're Here to Help!</h1>
+            <h2 className="text-xl font-semibold text-[#3270DF] mb-4">Have Questions?</h2>
+            <h1 className="text-3xl font-bold text-[#3270DF] mb-6">We're Here to Help!</h1>
 
             <form className="space-y-4">
               <input type="text" placeholder="Your Name" className="w-full p-3 border rounded focus:ring focus:ring-blue-200" />
@@ -535,7 +715,7 @@ const AgricultureSection = () => {
                 <label htmlFor="robot" className="text-sm">I AM Not a Robot</label>
               </div>
 
-              <button className="w-full bg-[#026498] text-white p-3 rounded focus:outline-none">
+              <button className="w-full bg-[#3270DF] text-white p-3 rounded focus:outline-none">
                 Send Message
               </button>
             </form>
@@ -546,8 +726,22 @@ const AgricultureSection = () => {
             <img src={map} alt="Company Location Map" className="w-full h-[300px] md:h-full object-cover rounded-lg" />
           </div>
         </div>
+      
 
       </div>
+      <div className="bg-[#3270DF] text-white p-6 flex flex-col md:flex-row justify-between items-center w-full mb-2">
+      <h2 className="text-lg font-semibold">Connect with Us for Business Solutions</h2>
+      <div className="flex items-center bg-white  p-2 w-full md:w-auto mt-4 md:mt-0  rounded-lg">
+        <input
+          type="email"
+          placeholder="Enter Mail"
+          className="px-4 py-2 outline-none text-black w-full"
+        />
+        <button className="bg-[#3270DF] text-white p-2 rounded-lg">
+          <FaPaperPlane size={16} />
+        </button>
+      </div>
+    </div>
     </>
   );
 };

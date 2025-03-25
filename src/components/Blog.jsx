@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../image/logo.svg";
-import backh1 from "../image/backh1.svg";
+import backh from "../image/backh.svg";
 import map from "../image/map.svg";
 import product1 from "../image/product1.svg";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { FaQuoteLeft, FaCheckCircle, FaChevronLeft, FaChevronRight,FaPaperPlane } from "react-icons/fa";
 
 const products = [
     { id: 1, title: "Reliable Export Services", description: "Our efficient supply chain guarantees timely and secure global deliveries.", image: product1 },
@@ -68,8 +68,9 @@ const Navbar = () => {
     const currentItems = products.slice(indexOfFirstItem, indexOfLastItem);
     const totalPages = Math.ceil(products.length / itemsPerPage);
     return (
+        <>
         <div>
-            <nav className=" bg-cover bg-center text-white" style={{ backgroundImage: `url(${backh1})` }}>
+            <nav className=" bg-cover bg-center text-white" style={{ backgroundImage: `url(${backh})` }}>
                 <div className="container mx-auto px-4">
                     <div className="flex justify-between items-center h-16">
                         <Link to="/">
@@ -99,7 +100,7 @@ const Navbar = () => {
                     )}
                 </div>
                 <div className="py-20 md:py-40 lg:py-60 px-6 md:px-10">
-                    <h1 className="text-white text-5xl md:text-7xl font-bold"  style={{ fontFamily: 'Frank Ruhl Libre' }}>Blog</h1>
+                    <h1 className="text-white text-5xl md:text-7xl font-bold" style={{ fontFamily: 'Frank Ruhl Libre' }}>Blog</h1>
                     <p className="text-white text-lg sm:text-xl md:text-2xl text-justify ">Glowing Group of Company is a leading exporter specializing in the global trade of agricultural products and textile yarns. Established in 2020, we have quickly gained recognition for our commitment to quality, </p>
                 </div>
             </nav>
@@ -126,44 +127,58 @@ const Navbar = () => {
             </div>
 
 
-             <div className="flex flex-col md:flex-row bg-white rounded-lg shadow-md overflow-hidden p-8 gap-8 container mx-auto">
-                    {/* Form Section */}
-                    <div className="md:w-1/2 w-full">
-                      <h2 className="text-2xl font-semibold text-[#026498] mb-4">Have Questions?</h2>
-                      <h1 className="text-3xl font-bold text-[#026498] mb-6">We're Here to Help!</h1>
-            
-                      <form className="space-y-4">
+            <div className="flex flex-col md:flex-row bg-white rounded-lg shadow-md overflow-hidden p-8 gap-8 container mx-auto">
+                {/* Form Section */}
+                <div className="md:w-1/2 w-full">
+                    <h2 className="text-2xl font-semibold text-[#026498] mb-4">Have Questions?</h2>
+                    <h1 className="text-3xl font-bold text-[#026498] mb-6">We're Here to Help!</h1>
+
+                    <form className="space-y-4">
                         {["Your Name", "Your Email", "Phone"].map((placeholder, index) => (
-                          <input key={index} type="text" placeholder={placeholder} className="w-full p-3 border rounded focus:ring focus:ring-blue-200" />
+                            <input key={index} type="text" placeholder={placeholder} className="w-full p-3 border rounded focus:ring focus:ring-blue-200" />
                         ))}
-            
+
                         <select className="w-full p-3 border rounded focus:ring focus:ring-blue-200">
-                          <option>Choose Subject</option>
-                          <option>General Inquiry</option>
-                          <option>Support</option>
-                          <option>Sales</option>
+                            <option>Choose Subject</option>
+                            <option>General Inquiry</option>
+                            <option>Support</option>
+                            <option>Sales</option>
                         </select>
-            
+
                         <textarea placeholder="Message" rows="4" className="w-full p-3 border rounded focus:ring focus:ring-blue-200"></textarea>
-            
+
                         <div className="flex items-center">
-                          <input type="checkbox" id="robot" className="mr-2" />
-                          <label htmlFor="robot" className="text-sm">I AM Not a Robot</label>
+                            <input type="checkbox" id="robot" className="mr-2" />
+                            <label htmlFor="robot" className="text-sm">I AM Not a Robot</label>
                         </div>
-            
+
                         <button className="w-full bg-[#026498] text-white p-3 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400">
-                          Send Message
+                            Send Message
                         </button>
-                      </form>
-                    </div>
-            
-                    {/* Map Section */}
-                    <div className="md:w-1/2 w-full">
-                      <img src={map} alt="Company Location Map" className="w-full h-[300px] md:h-full object-cover rounded-lg" />
-                    </div>
-                  </div>    
+                    </form>
+                </div>
+
+                {/* Map Section */}
+                <div className="md:w-1/2 w-full">
+                    <img src={map} alt="Company Location Map" className="w-full h-[300px] md:h-full object-cover rounded-lg" />
+                </div>
+            </div>
 
         </div>
+          <div className="bg-[#3270DF] text-white p-6 flex flex-col md:flex-row justify-between items-center w-full mb-2">
+                  <h2 className="text-lg font-semibold">Connect with Us for Business Solutions</h2>
+                  <div className="flex items-center bg-white  p-2 w-full md:w-auto mt-4 md:mt-0  rounded-lg">
+                    <input
+                      type="email"
+                      placeholder="Enter Mail"
+                      className="px-4 py-2 outline-none text-black w-full"
+                    />
+                    <button className="bg-[#3270DF] text-white p-2 rounded-lg">
+                      <FaPaperPlane size={16} />
+                    </button>
+                  </div>
+                </div>
+                </>
 
     );
 };

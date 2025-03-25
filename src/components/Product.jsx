@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../image/logo.svg"; 
-import backh1 from "../image/backh1.svg";
+import backh from "../image/backh.svg";
 import map from "../image/map.svg";
 import product1 from "../image/product1.svg";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { FaQuoteLeft, FaCheckCircle, FaChevronLeft, FaChevronRight,FaPaperPlane } from "react-icons/fa";
 
 const products = [
   { id: 1, title: "Reliable Export Services", description: "Our efficient supply chain guarantees timely and secure global deliveries.", image: product1 },
@@ -19,9 +19,9 @@ const ProductCard = ({ product }) => (
   <div className="bg-white rounded-lg shadow-md overflow-hidden">
     <img src={product.image} alt={product.title} className="w-full h-80 object-cover" />
     <div className="p-4">
-      <h2 className="text-lg font-bold text-[#026498]">{product.title}</h2>
+      <h2 className="text-lg font-bold text-[#3270DF]">{product.title}</h2>
       <p className="text-gray-600 text-sm mt-2">{product.description}</p>
-      <Link to ="/Singlep" className="text-[#026498] mt-2 inline-block hover:underline flex items-center">
+      <Link to ="/Singlep" className="text-[#3270DF] mt-2 inline-block hover:underline flex items-center">
         Read More →
       </Link>
     </div>
@@ -29,13 +29,31 @@ const ProductCard = ({ product }) => (
 );
 
 const CategoryTabs = () => {
-  const [activeTab, setActiveTab] = useState();
+  const [activeTab, setActiveTab] = useState(1);
+
   const categories = [
     { id: 1, name: "Agriculture" },
     { id: 2, name: "Cattle feed" },
     { id: 3, name: "Ceramic Parts & Insulators" },
   ];
 
+  const categoryContent = {
+    1: {
+      title: "Agriculture Products",
+      description: "We provide high-quality agricultural products including grains, pulses, and more.",
+      image: "/images/agriculture.jpg",
+    },
+    2: {
+      title: "Cattle Feed",
+      description: "Our cattle feed ensures the best nutrition for livestock with premium quality ingredients.",
+      image: "/images/cattle-feed.jpg",
+    },
+    3: {
+      title: "Ceramic Parts & Insulators",
+      description: "We specialize in ceramic parts & insulators for industrial and commercial applications.",
+      image: "/images/ceramic.jpg",
+    },
+  };
   return (
     <div className="flex justify-center mt-[20px]">
       <div className="flex border border-gray-300 rounded-lg overflow-hidden shadow-md">
@@ -46,7 +64,7 @@ const CategoryTabs = () => {
             className={`px-6 py-2 text-sm font-medium transition-all duration-300 ${
               activeTab === category.id
                 ? "bg-white text-black cusor-pointer"
-                : "hover:text-white hover:bg-[#026498]"
+                : "hover:text-white hover:bg-[#3270DF]"
             }`}
           >
             {category.name}
@@ -60,8 +78,9 @@ const CategoryTabs = () => {
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
+    <>
     <div>
-      <nav className=" bg-cover bg-center text-white" style={{ backgroundImage: `url(${backh1})` }}>
+      <nav className=" bg-cover bg-center text-white" style={{ backgroundImage: `url(${backh})` }}>
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center h-16">
             <Link to="/">
@@ -92,7 +111,7 @@ const Navbar = () => {
         </div>
         <div className="py-20 md:py-40 lg:py-60 px-6 md:px-10">
           <h1 className="text-white text-5xl md:text-7xl font-bold" style={{ fontFamily: 'Frank Ruhl Libre' }}>Product</h1>
-          <p className="text-white text-lg md:text-2xl max-w-2xl">Glowing Group of Company is a leading exporter of agricultural products and textile yarns.</p>
+          <p className="text-white text-lg md:text-2xl max-w-2xl">The quality products you Trust.</p>
         </div>
       </nav>
       <CategoryTabs />
@@ -101,11 +120,11 @@ const Navbar = () => {
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
-   <div className="flex flex-col md:flex-row bg-white rounded-lg shadow-md overflow-hidden p-8 gap-8 container mx-auto">
+   <div className="flex flex-col md:flex-row bg-white rounded-lg overflow-hidden p-8 gap-8 container mx-auto">
            {/* Form Section */}
            <div className="md:w-1/2 w-full">
-             <h2 className="text-2xl font-semibold text-[#026498] mb-4">Have Questions?</h2>
-             <h1 className="text-3xl font-bold text-[#026498] mb-6">We're Here to Help!</h1>
+             <h2 className="text-2xl font-semibold text-[#3270DF] mb-4">Have Questions?</h2>
+             <h1 className="text-3xl font-bold text-[#3270DF] mb-6">We're Here to Help!</h1>
    
              <form className="space-y-4">
                {["Your Name", "Your Email", "Phone"].map((placeholder, index) => (
@@ -126,7 +145,7 @@ const Navbar = () => {
                  <label htmlFor="robot" className="text-sm">I AM Not a Robot</label>
                </div>
    
-               <button className="w-full bg-[#026498] text-white p-3 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400">
+               <button className="w-full bg-[#3270DF] text-white p-3 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400">
                  Send Message
                </button>
              </form>
@@ -138,7 +157,20 @@ const Navbar = () => {
            </div>
          </div>
     </div>
-    
+     <div className="bg-[#3270DF] text-white p-6 flex flex-col md:flex-row justify-between items-center w-full mb-2">
+                  <h2 className="text-lg font-semibold">Connect with Us for Business Solutions</h2>
+                  <div className="flex items-center bg-white  p-2 w-full md:w-auto mt-4 md:mt-0  rounded-lg">
+                    <input
+                      type="email"
+                      placeholder="Enter Mail"
+                      className="px-4 py-2 outline-none text-black w-full"
+                    />
+                    <button className="bg-[#3270DF] text-white p-2 rounded-lg">
+                      <FaPaperPlane size={16} />
+                    </button>
+                  </div>
+                </div>
+    </>
   );
 };
 

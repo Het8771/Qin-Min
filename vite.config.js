@@ -6,3 +6,4 @@ import  talwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [react(),talwindcss(),],
 })
+

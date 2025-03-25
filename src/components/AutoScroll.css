@@ -1,0 +1,15 @@
+.scrolling-text {
+    display: flex;
+    white-space: nowrap;
+    animation: scroll-left 15s linear infinite;
+  }
+  
+  @keyframes scroll-left {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  
