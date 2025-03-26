@@ -1,13 +1,16 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../image/logo.svg"; // Logo image
 import backh from "../image/backh.svg";
 import about from "../image/about.svg";
 import map from "../image/map.svg";
 import { FaQuoteLeft, FaCheckCircle, FaChevronLeft, FaChevronRight,FaPaperPlane } from "react-icons/fa";
+import ProductDetailSection from "./Singleproduct";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation()
+  const productDetail = location.state.productDetail
 
   return (
     <>
@@ -80,14 +83,14 @@ const Navbar = () => {
       </nav>
 
       {/* About Us Section */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8 mt-[30px]">
+      {/* <section className="py-12 px-4 sm:px-6 lg:px-8 mt-[30px]">
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          {/* Image Section */}
+        
           <div className="w-4/6 mx-auto">
             <img src={about} alt="Agriculture Products" className="rounded-full shadow-lg" />
           </div>
 
-          {/* Text Content Section */}
+         
           <div className="text-gray-700">
             <h3 className="text-[#3270DF] font-bold text-4xl sm:text-4xl">Leading Exporter of Agriculture & Textiles</h3>
             <p className="mt-4 text-lg text-black text-justify">
@@ -110,7 +113,8 @@ const Navbar = () => {
             </ul>
           </div>
         </div>
-      </section>
+      </section> */}
+       <ProductDetailSection productDetail={productDetail} />
 
       {/* Contact Form & Map Section */}
       <div className="flex flex-col md:flex-row bg-white rounded-lg  overflow-hidden p-8 gap-8 container mx-auto">
