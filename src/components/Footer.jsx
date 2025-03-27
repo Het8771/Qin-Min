@@ -5,6 +5,7 @@ import { IoLogoWhatsapp } from "react-icons/io";
 import { RxCross2 } from "react-icons/rx";
 import { FaArrowUp } from "react-icons/fa";
 import logof from "../image/logof.png";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const [showIcons, setShowIcons] = useState(false);
@@ -14,17 +15,27 @@ const Footer = () => {
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
         <div className="md:w-1/3">
           <div className="flex items-center">
-            <img src={logof} alt="Logo" className="h-12 mr-3" />
+            <Link to="/">
+              <img src={logof} alt="Logo" className="h-12 mr-3" />
+            </Link>
           </div>
           <p className="mt-3 text-sm md:text-base">
             Glowing Group of Company is a leading exporter specializing in the
             global trade of agricultural products and textile yarns.
           </p>
           <div className="flex space-x-3 mt-4">
-            <FaInstagram className="text-xl cursor-pointer" />
-            <FaFacebookF className="text-xl cursor-pointer" />
-            <FaLinkedinIn className="text-xl cursor-pointer" />
-            <FaTwitter className="text-xl cursor-pointer" />
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <FaInstagram className="text-xl cursor-pointer" />
+            </a>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <FaFacebookF className="text-xl cursor-pointer" />
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <FaLinkedinIn className="text-xl cursor-pointer" />
+            </a>
+            <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+              <FaTwitter className="text-xl cursor-pointer" />
+            </a>
           </div>
         </div>
 
@@ -32,19 +43,27 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-lg">Company</h3>
             <ul className="mt-2 space-y-2 space-x-10 text-sm md:text-base">
-              <li>About Us</li>
+              <Link to="/About">About Us</Link>
               <li>Collection</li>
               <li>Exports</li>
               <li>Blog</li>
-              <li>Contact Us</li>
+              <Link to="/Contact">
+                <li>Contact Us</li>
+              </Link>
             </ul>
           </div>
           <div>
             <h3 className="font-semibold text-lg">Industry</h3>
             <ul className="mt-2 space-y-2 text-sm md:text-base">
-              <li>Agriculture</li>
-              <li>Cattle Feed</li>
-              <li>Ceramic Parts & Insulator</li>
+              <Link to="/Product">
+                <li>Agriculture</li>
+              </Link>
+              <Link to="/Product">
+                <li>Cattle Feed</li>
+              </Link>
+              <Link to="/Product">
+                <li>Ceramic Parts & Insulator</li>
+              </Link>
             </ul>
           </div>
           <div>
@@ -66,9 +85,15 @@ const Footer = () => {
       <div className="fixed right-5 bottom-5 flex flex-col items-center space-y-3">
         {showIcons && (
           <>
-            <HiMail className="bg-white p-2 rounded-full text-blue-500 text-5xl cursor-pointer" />
-            <FaLinkedinIn className="bg-white p-2 rounded-full text-blue-500 text-5xl cursor-pointer" />
-            <IoLogoWhatsapp className="bg-white p-2 rounded-full text-blue-500 text-5xl cursor-pointer" />
+            <a href="mailto:example@example.com" aria-label="Email">
+              <HiMail className="bg-white p-2 rounded-full text-blue-500 text-5xl cursor-pointer" />
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <FaLinkedinIn className="bg-white p-2 rounded-full text-blue-500 text-5xl cursor-pointer" />
+            </a>
+            <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+              <IoLogoWhatsapp className="bg-white p-2 rounded-full text-blue-500 text-5xl cursor-pointer" />
+            </a>
           </>
         )}
         <button
