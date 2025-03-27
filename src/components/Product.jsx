@@ -8,10 +8,10 @@ import Cattel3 from "../image/Cattel3.jpg";
 import Ceramic from "../image/Ceramic.jpg";
 import agri1 from "../image/agri1.jpg";
 import Agri2 from "../image/Agri2.jpg";
-import agri3 from "../image/agri3.jpg";
-import agri4 from "../image/agri4.jpg";
-import agri5 from "../image/agri5.jpg";
-import agri6 from "../image/agri6.jpg";
+import Agri3 from "../image/Agri3.jpg";
+import Agri4 from "../image/Agri4.jpg";
+import Agri5 from "../image/Agri5.jpg";
+import Agri6 from "../image/Agri6.jpg";
 import seed1 from "../image/seed1.jpg";
 import seed2 from "../image/seed2.jpg";
 import seed3 from "../image/seed3.jpg";
@@ -48,16 +48,16 @@ const categoryData = [
        Bold peanuts, also known as Runner peanuts, are a popular variety of peanuts renowned for their high fat and protein content, making them ideal for peanut paste and butter production. They are characterized by their red or dark red skin and elongated shape. These peanuts have a high oil content, typically exceeding 25%, which is higher than other varieties like Java peanuts. Bold peanuts are widely cultivated in India, particularly in states like Gujarat and Rajasthan, and account for a significant portion of the country's oilseed production `},
 
       {
-        id: 3, image: agri3, title: "Hulled Sesame seed", desc: "High-quality seeds for better farming.", singleDesc: `
+        id: 3, image: Agri3, title: "Hulled Sesame seed", desc: "High-quality seeds for better farming.", singleDesc: `
       Hulled sesame seeds are sesame seeds with their outer husk removed, making them easier to digest and enhancing their culinary appeal. They are often white or whitish in color and have a softer texture compared to natural sesame seeds. Hulled sesame seeds are rich in nutrients such as protein, healthy fats, dietary fiber, and minerals like calcium and iron. They are widely used in bakery products, confectionery, and as a topping for various dishes due to their nutty flavor and nutritional benefits` },
       {
-        id: 4, image: agri4, title: "Natural Sesame seeds", desc: "Boost crop yield naturally.", singleDesc: `
+        id: 4, image: Agri4, title: "Natural Sesame seeds", desc: "Boost crop yield naturally.", singleDesc: `
        Natural sesame seeds are sesame seeds that have not undergone the hulling process, meaning they retain their outer husk. They are available in various colors, including white, black, and brown, and are known for their nutty flavor and crunchy texture. These seeds are rich in nutrients such as protein, healthy fats, vitamins, and minerals like calcium and iron. They are widely used in culinary applications, health foods, and as a source of sesame oil.`},
       {
-        id: 5, image: agri5, title: "Groundnut Oil", desc: "Efficient tools for easy harvesting.", singleDesc: `
+        id: 5, image: Agri5, title: "Groundnut Oil", desc: "Efficient tools for easy harvesting.", singleDesc: `
        Groundnut oil, also known as peanut oil, is a popular cooking oil extracted from groundnuts (peanuts). It is rich in healthy fats, including monounsaturated and polyunsaturated fatty acids, which are beneficial for heart health by reducing bad cholesterol levels and increasing good cholesterol. Groundnut oil is also a good source of antioxidants like Vitamin E, which protects cells from damage and supports skin health. It has a high smoke point, making it ideal for high-temperature cooking and frying.`},
       {
-        id: 6, image: agri6, title: "Raw Cotton,", desc: "Analyze soil quality for better farming.", singleDesc: `
+        id: 6, image: Agri6, title: "Raw Cotton,", desc: "Analyze soil quality for better farming.", singleDesc: `
       Raw cotton, also known as seed cotton, is the raw material obtained from cotton plants. It consists of cotton fibers attached to the seeds within the cotton bolls. The fibers are soft, fluffy, and grow in a protective case around the seeds. Raw cotton is harvested from the cotton plant using mechanical pickers or strippers, which remove the fibers from the bolls. After harvesting, raw cotton undergoes processing to separate the fibers from the seeds and other debris, resulting in lint cotton, which is used in textile production.`},
     ],
   },
