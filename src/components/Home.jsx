@@ -430,7 +430,7 @@ const AgricultureSection = () => {
             <div className="w-3/5 mx-auto">
               <img src={HOMEF1} alt="Agriculture Products" className="rounded-full shadow-lg" />
             </div>
-            <div className="absolute top-1/2 right-10 w-1/3">
+            <div className="absolute top-1/3 right-15 w-1/3">
               <img src={HOMEF2} alt="Crops and Seeds" className="rounded-full shadow-lg" />
             </div>
           </div>
