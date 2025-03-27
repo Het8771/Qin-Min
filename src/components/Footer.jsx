@@ -42,7 +42,7 @@ const Footer = () => {
         <div className="flex flex-wrap md:flex-nowrap md:space-x-16 mt-6 md:mt-0">
           <div>
             <h3 className="font-semibold text-lg">Company</h3>
-            <ul className="mt-2 space-y-2 space-x-10 text-sm md:text-base">
+            <ul className="mt-2  space-x-10 text-sm md:text-base">
               <Link to="/About">About Us</Link>
               <li>Collection</li>
               <li>Exports</li>
@@ -68,7 +68,7 @@ const Footer = () => {
           </div>
           <div>
             <h3 className="font-semibold text-lg">Services</h3>
-            <ul className="mt-2 space-y-2 text-sm md:text-base">
+            <ul className="mt-2  text-sm md:text-base">
               <li>Sourcing & Processing</li>
               <li>Recycling & Sustainability</li>
               <li>Supply Chain & Logistics</li>
