@@ -49,6 +49,8 @@ import cremic3 from "../image/cremic3.jpeg";
 import cremic4 from "../image/cremic4.webp";
 import creamic5 from "../image/creamic5.jpeg";
 import cremic6 from "../image/cremic6.webp";
+import HOMEF1 from "../image/HOMEF1.svg";
+import HOMEF2 from "../image/HOMEF2.svg";
 
 
 const AgricultureSection = () => {
@@ -426,10 +428,10 @@ const AgricultureSection = () => {
           {/* Image Section */}
           <div className="relative">
             <div className="w-3/5 mx-auto">
-              <img src={Home2} alt="Agriculture Products" className="rounded-full shadow-lg" />
+              <img src={HOMEF1} alt="Agriculture Products" className="rounded-full shadow-lg" />
             </div>
             <div className="absolute top-1/2 right-10 w-1/3">
-              <img src={Home3} alt="Crops and Seeds" className="rounded-full shadow-lg" />
+              <img src={HOMEF2} alt="Crops and Seeds" className="rounded-full shadow-lg" />
             </div>
           </div>
 
