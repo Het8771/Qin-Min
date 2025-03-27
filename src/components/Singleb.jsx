@@ -38,12 +38,12 @@ const Navbar = () => {
               <Link to="/Product" className="hover:text-blue-400">
                 Product
               </Link>
-              <Link to="/Export" className="hover:text-blue-400">
+              {/* <Link to="/Export" className="hover:text-blue-400">
                 Export
               </Link>
               <Link to="/Blog" className="hover:text-blue-400">
                 Blog
-              </Link>
+              </Link> */}
             </div>
 
             {/* Contact Button */}

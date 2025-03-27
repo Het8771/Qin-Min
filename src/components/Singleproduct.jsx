@@ -1,41 +1,38 @@
-import React from "react";
-import { FaCheckCircle } from "react-icons/fa";
+import { useLocation } from "react-router-dom";
 
-const ProductDetailSection = ({ productDetail }) => {
-  if (!productDetail) return null; // Avoid rendering if data is missing
+const Singlep = () => {
+  const location = useLocation();
+  const { productDetail } = location.state || {}; // Ensure it does not break if no state
+
+  // Debugging: Check what data is received
+  console.log("Received productDetail:", productDetail);
 
   return (
-    <section className="py-12 px-4 sm:px-6 lg:px-8 mt-[30px]">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-        {/* Image Section */}
-        <div className="w-4/6 mx-auto">
-          <img
-            src={productDetail.image}
-            alt={productDetail.title}
-            className="rounded-full shadow-lg"
-          />
-        </div>
-
-        {/* Text Content Section */}
-        <div className="text-gray-700">
-          <h3 className="text-[#3270DF] font-bold text-4xl sm:text-4xl">
-            {productDetail.title}
-          </h3>
-          <p className="mt-4 text-lg text-black text-justify">
-            {productDetail.desc}
-          </p>
-          <ul className="mt-6 space-y-4">
-            {productDetail.features?.map((text, index) => (
-              <li key={index} className="flex items-start space-x-3">
-                <FaCheckCircle className="text-[#3270DF] mt-1" size={20} />
-                <span className="text-sm font-medium">{text}</span>
-              </li>
-            ))}
-          </ul>
+    <div className="container mx-auto p-6">
+    <div className="bg-white shadow-md rounded-lg p-6 flex flex-col md:flex-row gap-6">
+      {/* Product Image */}
+      <img 
+        src={productDetail.image} 
+        alt={productDetail.title} 
+        className="w-full md:w-1/3 h-60 object-cover rounded-lg"
+      />
+      
+      {/* Product Details */}
+      <div className="md:w-2/3">
+        <h1 className="text-2xl font-bold text-blue-600">{productDetail.title}</h1>
+        <p className="text-gray-600 mt-2">{productDetail.desc}</p>
+  
+        {/* Single Description with Formatting */}
+        <div className="mt-4 text-gray-700">
+          {productDetail.singleDesc.split("\n").map((line, index) => (
+            <p key={index} className="mb-2">{line}</p>
+          ))}
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+  
   );
 };
 
-export default ProductDetailSection;
+export default Singlep;

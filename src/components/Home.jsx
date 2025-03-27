@@ -1,24 +1,17 @@
 import logo from "../image/logo.svg";
 import { Link } from "react-router-dom";
-import { useState, useEffect,useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import Home1 from "../image/Home1.svg";
 import Home2 from "../image/Home2.svg";
 import Home3 from "../image/Home3.svg";
-import sample1 from "../image/sample1.jpg";
-import sample2 from "../image/sample2.jpg";
-import sample3 from "../image/sample3.jpg";
-import sample4 from "../image/sample4.jpg";
-import sample5 from "../image/sample5.jpg";
-import sample6 from "../image/sample6.jpg";
 import backh from "../image/backh.svg";
-import cate from "../image/cate.svg";
 import emoji1 from "../image/emoji1.svg";
 import emoji2 from "../image/emoji2.svg";
 import emoji3 from "../image/emoji3.svg";
 import emoji4 from "../image/emoji4.svg";
 import emoji5 from "../image/emoji5.svg";
 import emoji6 from "../image/emoji6.svg";
-import { FaQuoteLeft, FaCheckCircle, FaChevronLeft, FaChevronRight,FaPaperPlane } from "react-icons/fa";
+import { FaQuoteLeft, FaCheckCircle, FaChevronLeft, FaChevronRight, FaPaperPlane } from "react-icons/fa";
 import user from "../image/user.svg";
 import map from "../image/map.svg";
 import img1 from "../image/img1.jpg"
@@ -31,18 +24,12 @@ import Agri3 from "../image/Agri3.jpg";
 import Agri4 from "../image/Agri4.jpg";
 import Agri5 from "../image/Agri5.jpg";
 import Agri6 from "../image/Agri6.jpg";
-import  Cattel from "../image/ Cattel.jpg";
-import  Cattel2 from "../image/ Cattel2.jpg";
-import  Cattel3 from "../image/Cattel3.jpg";
-import  Cattel4 from "../image/Cattel4.jpg";
-import  Cattel5 from "../image/Cattel5.jpg";
-import  Cattel6 from "../image/Cattel6.jpg";
-import Ceramic from "../image/Ceramic.jpg";
-import Ceramic2 from "../image/Ceramic2.jpg";
-import Ceramic3 from "../image/Ceramic3.jpg";
-import Ceramic4 from "../image/Ceramic4.jpg";
-import Ceramic5 from "../image/Ceramic5.jpg";
-import Ceramic6 from "../image/Ceramic6.jpg";
+import Cattel from "../image/ Cattel.jpg";
+import Cattel2 from "../image/ Cattel2.jpg";
+import Cattel3 from "../image/Cattel3.jpg";
+import Cattel4 from "../image/Cattel4.jpg";
+import Cattel5 from "../image/Cattel5.jpg";
+import Cattel6 from "../image/Cattel6.jpg";
 import Agriculure from "../image/Agriculure.jpg";
 import Abc from "../image/Abc.jpg";
 import abc2 from "../image/abc2.jpg";
@@ -56,10 +43,17 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import "./AutoScroll.css";
+import cremic1 from "../image/cremic1.webp";
+import cremic2 from "../image/cremic2.webp";
+import cremic3 from "../image/cremic3.jpeg";
+import cremic4 from "../image/cremic4.webp";
+import creamic5 from "../image/creamic5.jpeg";
+import cremic6 from "../image/cremic6.webp";
+
 
 const AgricultureSection = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const productImages = [Ceramic,Ceramic2,Ceramic3,Ceramic4,Ceramic5,Ceramic];
+  const productImages = [cremic1, cremic2, cremic3, cremic4, creamic5, cremic6];
   // const categoryImages = [cate, cate, cate, cate, cate, cate];
   const productImages1 = [Home1, Home1, Home1, Home1, Home1, Home1];
 
@@ -128,8 +122,8 @@ const AgricultureSection = () => {
       Agri5,
       Agri6
     ],
-    " Cattel feed":[
-       Cattel,
+    " Cattel feed": [
+      Cattel,
       Cattel2,
       Cattel3,
       Cattel4,
@@ -138,19 +132,19 @@ const AgricultureSection = () => {
 
     ],
     "Ceramic Parts & Insulators": [
-      Ceramic,
-      Ceramic2,
-      Ceramic3,
-      Ceramic4,
-      Ceramic5,
-      Ceramic6,
+      cremic1,
+      cremic2,
+      cremic3,
+      cremic4,
+      creamic5,
+      cremic6,
     ]
   };
 
   const [activeCategory, setActiveCategory] = useState("Agriculture")
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  
+
   const categoryImages = categoriesData[activeCategory] || [];
 
   useEffect(() => {
@@ -167,7 +161,7 @@ const AgricultureSection = () => {
       </span>
     ));
   };
- 
+
   const scrollRef = useRef(null)
 
   // Sample testimonial data
@@ -277,7 +271,7 @@ const AgricultureSection = () => {
     abc4,
     abc5,
   ];
-  
+
   return (
     <>
       <nav className="bg-white">
@@ -299,12 +293,12 @@ const AgricultureSection = () => {
               <Link to="/Product" className="text-black hover:text-blue-600">
                 Product
               </Link>
-              <Link to="/Export" className="text-black hover:text-blue-600">
+              {/* <Link to="/Export" className="text-black hover:text-blue-600">
                 Export
               </Link>
               <a href="/Blog" className="text-black hover:text-blue-600">
                 Blog
-              </a>
+              </a> */}
             </div>
 
             {/* Contact Button */}
@@ -359,12 +353,12 @@ const AgricultureSection = () => {
               <Link to="/Product" className="block text-black hover:text-blue-600">
                 Product
               </Link>
-              <Link to="/Export" className="block text-black hover:text-blue-600">
+              {/* <Link to="/Export" className="block text-black hover:text-blue-600">
                 Export
               </Link>
               <Link to="/Blog" className="block text-black hover:text-blue-600">
                 Blog
-              </Link>
+              </Link> */}
               <Link to="/Contact" className="block bg-blue-600 text-white px-4 py-2 rounded text-center">Contact us</Link>
             </div>
           )}
@@ -373,46 +367,46 @@ const AgricultureSection = () => {
 
       {/* Hero Section */}
       <section className="relative w-full h-screen overflow-hidden">
-      <Swiper
-      modules={[Autoplay, Pagination, Navigation]}
-      loop={true}
-      autoplay={{ delay: 3000, disableOnInteraction: false }}
-      pagination={{ clickable: true }}
-      navigation
-      className="w-full h-screen"
-    >
-      {slides.map((slide, index) => (
-        <SwiperSlide key={index}>
-          <div className="relative w-full h-screen">
-            <img src={slide.img} alt={slide.title} className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-black/20" />
+        <Swiper
+          modules={[Autoplay, Pagination, Navigation]}
+          loop={true}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          pagination={{ clickable: true }}
+          navigation
+          className="w-full h-screen"
+        >
+          {slides.map((slide, index) => (
+            <SwiperSlide key={index}>
+              <div className="relative w-full h-screen">
+                <img src={slide.img} alt={slide.title} className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-black/20" />
 
-            <div className="absolute inset-0 flex flex-col justify-center text-white px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-              <div className="space-y-2 sm:space-y-4 lg:space-y-6">
-                <h2
-                  className="text-4xl sm:text-5xl lg:text-[64px] font-extrabold leading-tight sm:leading-tight lg:leading-[83px]"
-                  style={{ fontFamily: 'Frank Ruhl Libre' }}
-                >
-                  {slide.title}
-                </h2>
-                {slide.products.map((product, idx) => (
-                  <p
-                    key={idx}
-                    className="text-2xl sm:text-3xl lg:text-4xl font-bold"
-                    style={{ fontFamily: 'Frank Ruhl Libre' }}
-                  >
-                    {product}
-                  </p>
-                ))}
-                <p className="text-base sm:text-lg lg:text-xl max-w-3xl tracking-wide mt-4 sm:mt-6 lg:mt-8">
-                  {slide.description}
-                </p>
+                <div className="absolute inset-0 flex flex-col justify-center text-white px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+                  <div className="space-y-2 sm:space-y-4 lg:space-y-6">
+                    <h2
+                      className="text-4xl sm:text-5xl lg:text-[64px] font-extrabold leading-tight sm:leading-tight lg:leading-[83px]"
+                      style={{ fontFamily: 'Frank Ruhl Libre' }}
+                    >
+                      {slide.title}
+                    </h2>
+                    {slide.products.map((product, idx) => (
+                      <p
+                        key={idx}
+                        className="text-2xl sm:text-3xl lg:text-4xl font-bold"
+                        style={{ fontFamily: 'Frank Ruhl Libre' }}
+                      >
+                        {product}
+                      </p>
+                    ))}
+                    <p className="text-base sm:text-lg lg:text-xl max-w-3xl tracking-wide mt-4 sm:mt-6 lg:mt-8">
+                      {slide.description}
+                    </p>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        </SwiperSlide>
-      ))}
-    </Swiper>
+            </SwiperSlide>
+          ))}
+        </Swiper>
 
         <div className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2">
           <button className="bg-white/30 hover:bg-white/50 text-white p-2 sm:p-3 rounded-full transition">
@@ -490,63 +484,62 @@ const AgricultureSection = () => {
 
       {/* Our Category Section */}
       <section className="py-12">
-      <div className="container mx-auto px-4">
-        {/* Header Section */}
-        <div className="text-left mb-8">
-          <p className="text-[#3270DF] tracking-wider text-xl">Our Category</p>
-          <h2 className="text-4xl font-bold text-[#3270DF]">
-          Our Range of Products
-          </h2>
-          <p className="text-black mt-2 text-base">
-          we are dedicated to providing high-quality, innovative, and sustainable agricultural solutions. Our diverse range of products is designed to enhance productivity, improve efficiency, and ensure long-term sustainability for farmers and agribusinesses.
-          </p>
-        </div>
+        <div className="container mx-auto px-4">
+          {/* Header Section */}
+          <div className="text-left mb-8">
+            <p className="text-[#3270DF] tracking-wider text-xl">Our Category</p>
+            <h2 className="text-4xl font-bold text-[#3270DF]">
+              Our Range of Products
+            </h2>
+            <p className="text-black mt-2 text-base">
+              we are dedicated to providing high-quality, innovative, and sustainable agricultural solutions. Our diverse range of products is designed to enhance productivity, improve efficiency, and ensure long-term sustainability for farmers and agribusinesses.
+            </p>
+          </div>
 
-        {/* Categories and Image Grid */}
-        <div className="flex flex-col lg:flex-row gap-6">
-          {/* Category List (Sticky) */}
-          <div className="lg:w-1/4">
-            <div className="sticky top-0 bg-white rounded-lg p-2 shadow-md">
-              <ul className="space-y-2">
-                {Object.keys(categoriesData).map(category => (
-                  <li key={category}>
-                    <button
-                      className={`text-black py-2 px-4 rounded-md w-full text-left transition-colors duration-200 ${
-                        activeCategory === category
-                          ? "bg-[#3270DF] text-white"
-                          : "hover:bg-[#3270DF] hover:text-white"
-                      }`}
-                      onClick={() => setActiveCategory(category)}
-                    >
-                      {category}
-                    </button>
-                  </li>
-                ))}
-              </ul>
+          {/* Categories and Image Grid */}
+          <div className="flex flex-col lg:flex-row gap-6">
+            {/* Category List (Sticky) */}
+            <div className="lg:w-1/4">
+              <div className="sticky top-0 bg-white rounded-lg p-2 shadow-md">
+                <ul className="space-y-2">
+                  {Object.keys(categoriesData).map(category => (
+                    <li key={category}>
+                      <button
+                        className={`text-black py-2 px-4 rounded-md w-full text-left transition-colors duration-200 ${activeCategory === category
+                            ? "bg-[#3270DF] text-white"
+                            : "hover:bg-[#3270DF] hover:text-white"
+                          }`}
+                        onClick={() => setActiveCategory(category)}
+                      >
+                        {category}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Image Grid - Changes based on selected category */}
+            <div className="lg:w-3/4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              {categoryImages.map((image, index) => (
+                <div
+                  key={index}
+                  className="relative overflow-hidden rounded-md shadow-md group"
+                >
+                  <img
+                    src={image}
+                    alt={`${activeCategory} product ${index + 1}`}
+                    width={400}
+                    height={300}
+                    className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-[#026498]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+              ))}
             </div>
           </div>
-
-          {/* Image Grid - Changes based on selected category */}
-          <div className="lg:w-3/4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {categoryImages.map((image, index) => (
-              <div
-                key={index}
-                className="relative overflow-hidden rounded-md shadow-md group"
-              >
-                <img
-                  src={image}
-                  alt={`${activeCategory} product ${index + 1}`}
-                  width={400}
-                  height={300}
-                  className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-[#026498]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
-            ))}
-          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
 
       {/* Why Choose Us Section */}
@@ -574,118 +567,117 @@ const AgricultureSection = () => {
 
       {/* Best Selling Product Section */}
       <section className="py-12">
-      <div className="container mx-auto px-4">
-        <div className="mb-8">
-          <p className="text-[#3270DF] tracking-wider text-xl">Best Selling Product</p>
-          <h2 className="text-4xl font-bold text-[#3270DF]">Top Choice for Global Markets.</h2>
-          <p className="text-gray-700 mt-2 text-lg">
-          Glowing Group of Company,we take pride in being the top choice for global markets, offering high-quality, innovative, and sustainable solutions across the agricultural industry. Our commitment to excellence, precision, and customer satisfaction makes us a trusted partner for farmers, agribusinesses, and industries worldwide.
-          </p>
-        </div>
+        <div className="container mx-auto px-4">
+          <div className="mb-8">
+            <p className="text-[#3270DF] tracking-wider text-xl">Best Selling Product</p>
+            <h2 className="text-4xl font-bold text-[#3270DF]">Top Choice for Global Markets.</h2>
+            <p className="text-gray-700 mt-2 text-lg">
+              Glowing Group of Company,we take pride in being the top choice for global markets, offering high-quality, innovative, and sustainable solutions across the agricultural industry. Our commitment to excellence, precision, and customer satisfaction makes us a trusted partner for farmers, agribusinesses, and industries worldwide.
+            </p>
+          </div>
 
-        {/* Product Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4">
-          {productImage.map((image, index) => (
-            <div key={index} className="relative">
-              <img
-                src={image}
-                alt={`Product ${index + 1}`}
-                className="w-full h-64 object-cover rounded-md shadow-md"
-              />
-            </div>
-          ))}
+          {/* Product Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4">
+            {productImage.map((image, index) => (
+              <div key={index} className="relative">
+                <img
+                  src={image}
+                  alt={`Product ${index + 1}`}
+                  className="w-full h-64 object-cover rounded-md shadow-md"
+                />
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
       {/* Google Line Section */}
       <section className="bg-white py-4 overflow-hidden">
-      <div className="relative w-full flex items-center">
-        <div className="scrolling-text">
-          {[...Array(2)].map((_, index) => (
-            <div key={index} className="flex space-x-6">
-              {Array(6)
-                .fill("Google")
-                .map((word, i) => (
-                  <span
-                    key={i}
-                    className="text-gray-400 text-2xl md:text-3xl lg:text-4xl mx-2 md:mx-4 lg:mx-6"
-                  >
-                    {word}
-                  </span>
-                ))}
-            </div>
-          ))}
+        <div className="relative w-full flex items-center">
+          <div className="scrolling-text">
+            {[...Array(2)].map((_, index) => (
+              <div key={index} className="flex space-x-6">
+                {Array(6)
+                  .fill("Google")
+                  .map((word, i) => (
+                    <span
+                      key={i}
+                      className="text-gray-400 text-2xl md:text-3xl lg:text-4xl mx-2 md:mx-4 lg:mx-6"
+                    >
+                      {word}
+                    </span>
+                  ))}
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
 
       {/* Testimonial Section */}
       <section className="py-12 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="mb-8">
-          <p className="text-[#3270DF] tracking-wider text-xl">Testimonial</p>
-          <h2 className="text-4xl font-bold text-[#3270DF]">
-            What Our Users Say
-          </h2>
-          <p className="text-gray-700 mt-2">
-            Glowing Group of Company is a leading exporter specializing in the
-            global trade of agricultural products. Established
-            in 2020, we have quickly gained recognition for our commitment to
-            quality
-          </p>
-        </div>
+        <div className="container mx-auto px-4">
+          <div className="mb-8">
+            <p className="text-[#3270DF] tracking-wider text-xl">Testimonial</p>
+            <h2 className="text-4xl font-bold text-[#3270DF]">
+              What Our Users Say
+            </h2>
+            <p className="text-gray-700 mt-2">
+              Glowing Group of Company is a leading exporter specializing in the
+              global trade of agricultural products. Established
+              in 2020, we have quickly gained recognition for our commitment to
+              quality
+            </p>
+          </div>
 
-        {/* Scrollable testimonial container */}
-        <div
-          ref={scrollRef}
-          className="flex overflow-x-auto pb-8 gap-6 snap-x snap-mandatory scrollbar-hide"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-        >
-          {testimonials1.map((testimonial1, index) => (
-            <div
-              key={index}
-              className="flex-shrink-0 w-full md:w-[calc(33.333%-16px)] snap-center bg-white rounded-md p-6 shadow-md"
-            >
-              <div className="text-gray-600 mb-4 relative">
-                <FaQuoteLeft className="absolute top-0 left-0 text-gray-300 text-2xl" />
-                <p className="pl-8">{testimonial1.text}</p>
+          {/* Scrollable testimonial container */}
+          <div
+            ref={scrollRef}
+            className="flex overflow-x-auto pb-8 gap-6 snap-x snap-mandatory scrollbar-hide"
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          >
+            {testimonials1.map((testimonial1, index) => (
+              <div
+                key={index}
+                className="flex-shrink-0 w-full md:w-[calc(33.333%-16px)] snap-center bg-white rounded-md p-6 shadow-md"
+              >
+                <div className="text-gray-600 mb-4 relative">
+                  <FaQuoteLeft className="absolute top-0 left-0 text-gray-300 text-2xl" />
+                  <p className="pl-8">{testimonial1.text}</p>
+                </div>
+                <div className="flex justify-center mt-4">
+                  {renderStars(testimonial1.stars)}
+                </div>
+                <div className="flex flex-col items-center mt-4">
+                  <img
+                    src={user}
+                    alt={testimonial1.name}
+                    className="w-20 h-20 rounded-full object-cover mb-2"
+                  />
+                  <h4 className="text-lg font-semibold text-gray-800">
+                    {testimonial1.name}
+                  </h4>
+                  <p className="text-gray-500 text-sm">
+                    {testimonial1.designation}
+                  </p>
+                </div>
               </div>
-              <div className="flex justify-center mt-4">
-                {renderStars(testimonial1.stars)}
-              </div>
-              <div className="flex flex-col items-center mt-4">
-                <img
-                  src={user}
-                  alt={testimonial1.name}
-                  className="w-20 h-20 rounded-full object-cover mb-2"
-                />
-                <h4 className="text-lg font-semibold text-gray-800">
-                  {testimonial1.name}
-                </h4>
-                <p className="text-gray-500 text-sm">
-                  {testimonial1.designation}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
 
-        {/* Navigation dots */}
-        <div className="flex justify-center mt-4 space-x-2">
-          {testimonials.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => scrollToTestimonial(index)}
-              className={`w-3 h-3 rounded-full transition-colors ${
-                currentIndex === index ? "bg-[#026498]" : "bg-gray-300"
-              }`}
-              aria-label={`Go to testimonial ${index + 1}`}
-            />
-          ))}
+          {/* Navigation dots */}
+          <div className="flex justify-center mt-4 space-x-2">
+            {testimonials.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => scrollToTestimonial(index)}
+                className={`w-3 h-3 rounded-full transition-colors ${currentIndex === index ? "bg-[#026498]" : "bg-gray-300"
+                  }`}
+                aria-label={`Go to testimonial ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
       <div className="flex flex-col md:flex-row bg-white rounded-lg shadow-md overflow-hidden ">
 
@@ -726,22 +718,22 @@ const AgricultureSection = () => {
             <img src={map} alt="Company Location Map" className="w-full h-[300px] md:h-full object-cover rounded-lg" />
           </div>
         </div>
-      
+
 
       </div>
       <div className="bg-[#3270DF] text-white p-6 flex flex-col md:flex-row justify-between items-center w-full mb-2">
-      <h2 className="text-lg font-semibold">Connect with Us for Business Solutions</h2>
-      <div className="flex items-center bg-white  p-2 w-full md:w-auto mt-4 md:mt-0  rounded-lg">
-        <input
-          type="email"
-          placeholder="Enter Mail"
-          className="px-4 py-2 outline-none text-black w-full"
-        />
-        <button className="bg-[#3270DF] text-white p-2 rounded-lg">
-          <FaPaperPlane size={16} />
-        </button>
+        <h2 className="text-lg font-semibold">Connect with Us for Business Solutions</h2>
+        <div className="flex items-center bg-white  p-2 w-full md:w-auto mt-4 md:mt-0  rounded-lg">
+          <input
+            type="email"
+            placeholder="Enter Mail"
+            className="px-4 py-2 outline-none text-black w-full"
+          />
+          <button className="bg-[#3270DF] text-white p-2 rounded-lg">
+            <FaPaperPlane size={16} />
+          </button>
+        </div>
       </div>
-    </div>
     </>
   );
 };

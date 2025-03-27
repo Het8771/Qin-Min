@@ -55,12 +55,12 @@ const Navbar = () => {
               <Link to="/Product" className="hover:text-blue-400">
                 Product
               </Link>
-              <Link to="/Export" className="hover:text-blue-400">
+              {/* <Link to="/Export" className="hover:text-blue-400">
                 Export
               </Link>
               <Link to="/Blog" className="hover:text-blue-400">
                 Blog
-              </Link>
+              </Link> */}
             </div>
 
             {/* Contact Button */}
@@ -118,12 +118,12 @@ const Navbar = () => {
               <Link to="/Product" className="block hover:text-blue-600">
                 Product
               </Link>
-              <Link to="/Export" className="block hover:text-blue-600">
+              {/* <Link to="/Export" className="block hover:text-blue-600">
                 Export
               </Link>
               <Link to="/Blog" className="block hover:text-blue-600">
                 Blog
-              </Link>
+              </Link> */}
               <Link
                 to="/Contact"
                 className="w-full block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300 text-center"

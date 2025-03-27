@@ -4,6 +4,7 @@ import { HiMail } from "react-icons/hi";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { RxCross2 } from "react-icons/rx";
 import { FaArrowUp } from "react-icons/fa";
+import logof from "../image/logof.png";
 
 const Footer = () => {
   const [showIcons, setShowIcons] = useState(false);
@@ -13,10 +14,9 @@ const Footer = () => {
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
         <div className="md:w-1/3">
           <div className="flex items-center">
-            <img src="/logo.png" alt="Logo" className="h-12 mr-3" />
-            <h2 className="text-xl font-semibold">Glowing Group of Company</h2>
+            <img src={logof} alt="Logo" className="h-12 mr-3" />
           </div>
-          <p className="mt-3 text-sm">
+          <p className="mt-3 text-sm md:text-base">
             Glowing Group of Company is a leading exporter specializing in the
             global trade of agricultural products and textile yarns.
           </p>
@@ -31,7 +31,7 @@ const Footer = () => {
         <div className="flex flex-wrap md:flex-nowrap md:space-x-16 mt-6 md:mt-0">
           <div>
             <h3 className="font-semibold text-lg">Company</h3>
-            <ul className="mt-2 space-y-2 text-sm">
+            <ul className="mt-2 space-y-2 space-x-10 text-sm md:text-base">
               <li>About Us</li>
               <li>Collection</li>
               <li>Exports</li>
@@ -41,7 +41,7 @@ const Footer = () => {
           </div>
           <div>
             <h3 className="font-semibold text-lg">Industry</h3>
-            <ul className="mt-2 space-y-2 text-sm">
+            <ul className="mt-2 space-y-2 text-sm md:text-base">
               <li>Agriculture</li>
               <li>Cattle Feed</li>
               <li>Ceramic Parts & Insulator</li>
@@ -49,7 +49,7 @@ const Footer = () => {
           </div>
           <div>
             <h3 className="font-semibold text-lg">Services</h3>
-            <ul className="mt-2 space-y-2 text-sm">
+            <ul className="mt-2 space-y-2 text-sm md:text-base">
               <li>Sourcing & Processing</li>
               <li>Recycling & Sustainability</li>
               <li>Supply Chain & Logistics</li>
@@ -58,8 +58,8 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="text-center mt-8 text-sm">
-        © 2025 All rights reserved by Glowing International
+      <div className="text-center mt-8 text-sm md:text-base">
+        &copy; 2025 All rights reserved by Glowing International
       </div>
 
       {/* Floating Icons */}
