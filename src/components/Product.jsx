@@ -7,7 +7,7 @@ import Agri from "../image/Agri.jpg";
 import Cattel3 from "../image/Cattel3.jpg";
 import Ceramic from "../image/Ceramic.jpg";
 import agri1 from "../image/agri1.jpg";
-import agri2 from "../image/agri2.jpg";
+import Agri2 from "../image/Agri2.jpg";
 import agri3 from "../image/agri3.jpg";
 import agri4 from "../image/agri4.jpg";
 import agri5 from "../image/agri5.jpg";
@@ -44,7 +44,7 @@ const categoryData = [
         Java Peanuts are high-quality, protein-rich peanuts known for their superior taste, nutritional benefits, and versatile applications. They are carefully cultivated to ensure maximum purity, freshness, and export-quality standards.
         Java peanuts are rich in proteins, healthy fats, fiber, and essential minerals, making them highly valuable in the food industry. They are widely used for snack production, peanut butter, oil extraction, and animal feed. Additionally, their nitrogen-fixing properties contribute to soil fertility, making them an environmentally sustainable crop choice.`},
       {
-        id: 2, image: agri2, title: "Bold peanuts", desc: "Efficient water management.", singleDesc: `
+        id: 2, image: Agri2, title: "Bold peanuts", desc: "Efficient water management.", singleDesc: `
        Bold peanuts, also known as Runner peanuts, are a popular variety of peanuts renowned for their high fat and protein content, making them ideal for peanut paste and butter production. They are characterized by their red or dark red skin and elongated shape. These peanuts have a high oil content, typically exceeding 25%, which is higher than other varieties like Java peanuts. Bold peanuts are widely cultivated in India, particularly in states like Gujarat and Rajasthan, and account for a significant portion of the country's oilseed production `},
 
       {
@@ -203,12 +203,12 @@ const Navbar = () => {
               <Link to="/Product" className="block hover:text-blue-600">
                 Product
               </Link>
-              {/* <Link to="/Export" className="block hover:text-blue-600">
+              <Link to="/Export" className="block hover:text-blue-600">
                 Export
               </Link>
               <Link to="/Blog" className="block hover:text-blue-600">
                 Blog
-              </Link> */}
+              </Link>
               <Link
                 to="/Contact"
                 className="block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 text-center"
