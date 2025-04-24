@@ -116,7 +116,7 @@ function Header() {
                                 </svg>
                             </button>
                             {isCollectionOpen && (
-                                <div className="pl-4 mt-2 space-y-2">
+                                <div className="pl-4 mt-2 space-y-2 ">
                                     {collectionLinks.map((link, index) => (
                                         <Link
                                             key={index}
